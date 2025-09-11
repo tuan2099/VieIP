@@ -1,7 +1,6 @@
 <?php 
     global $vexatheme_option;
     $preloader_img = get_template_directory_uri().'/assets/img/loading-1.svg' ;
-
 ?>
 <section id="testimonials" aria-labelledby="testimonials-title" class="bg-[#190939]">
   <div class="max-w-[1440px] mx-auto px-6 sm:px-9">

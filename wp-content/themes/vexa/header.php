@@ -8,3 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <?php wp_head(); ?>
 </head>
+
+<body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
+    <?php
+        /* header for page */
+        if (function_exists('vexa_header_layout')) {
+            vexa_header_layout();
+        }
+        else{
+            get_template_part('inc/header/header', 'default');
+        }
+    ?>

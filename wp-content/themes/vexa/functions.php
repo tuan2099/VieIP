@@ -32,3 +32,27 @@ add_action('wp_enqueue_scripts', 'vexatheme_scripts');
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+
+function my_menu_link_class($atts, $item, $args) {
+    if ($args->theme_location === 'primary') {
+        $atts['class'] = 'hover:text-pink-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-400';
+        if ($item->title === 'Home') {
+            $atts['class'] = 'text-pink-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-400';
+        }
+        if ($item->title === 'Contact Us') {
+            $atts['class'] = 'inline-block bg-[#552ae0] rounded-full border-2 border-[#552ae0] px-12 py-3 text-[16px] font-medium text-purple-200 hover:bg-[#552ae0] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#552ae0]';
+        }
+    }
+    return $atts;
+}
+add_filter('nav_menu_link_attributes', 'my_menu_link_class', 10, 3);
+
+// functions.php
+function vexatheme_register_menus() {
+    register_nav_menus([
+        'primary'   => __( 'Primary Menu', 'vexa' ),
+        'footer'    => __( 'Footer Menu', 'vexa' ),
+    ]);
+}
+add_action('after_setup_theme', 'vexatheme_register_menus');
+
