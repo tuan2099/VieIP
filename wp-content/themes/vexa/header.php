@@ -9,7 +9,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body class="bg-[#0b0b15] text-white" <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <?php
         /* header for page */

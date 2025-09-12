@@ -24,6 +24,8 @@ add_action('init', function() {
 function vexatheme_scripts () {
     wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/font-awsome/all.min.css', array(), '6.4');
     wp_enqueue_script('font-awesome', get_template_directory_uri() . '/assets/font-awsome/all.min.js', array(), '6.4');
+    
+    
     wp_enqueue_script('tailwindcss','https://cdn.tailwindcss.com', array(), null, false);
 }
 add_action('wp_enqueue_scripts', 'vexatheme_scripts');
@@ -55,4 +57,22 @@ function vexatheme_register_menus() {
     ]);
 }
 add_action('after_setup_theme', 'vexatheme_register_menus');
+
+
+// Thêm class cho link <a>
+add_filter('nav_menu_link_attributes', function($atts, $item, $args) {
+    if ($args->theme_location === 'footer') {
+        $atts['class'] = 'text-[#7C91B3C2] hover:text-slate-700 focus:outline-none focus:underline';
+    }
+    return $atts;
+}, 10, 3);
+
+// Chèn dot hồng vào trước mỗi item
+add_filter('walker_nav_menu_start_el', function($item_output, $item, $depth, $args) {
+    if ($args->theme_location === 'footer') {
+        $dot = '<span class="absolute -left-3 top-2 w-[5px] h-[5px] bg-rose-500 rounded-full" aria-hidden="true"></span>';
+        $item_output = '<li class="relative pl-3">' . $dot . $item_output . '</li>';
+    }
+    return $item_output;
+}, 10, 4);
 

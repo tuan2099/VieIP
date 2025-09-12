@@ -7,6 +7,28 @@
 
 get_header();
 ?>
+<style>
+  .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #444;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+</style>
 <section class="py-20 relative">
   <div class="container mx-auto px-4 md:px-6 max-w-[1440px] z-10">
     <div class="grid lg:grid-cols-2 gap-1 items-center">
@@ -681,6 +703,124 @@ get_header();
             ?>
         </div>
     </div>
+</section>
+
+<section id="testimonials" aria-labelledby="testimonials-title" class="bg-[#190939]">
+  <div class="max-w-[1440px] mx-auto px-6 sm:px-9">
+    <div class="max-w-[1400px] mx-auto pb-36 relative">
+      <!-- Head -->
+      <header class="pt-24 flex flex-col items-center gap-5">
+        <div class="pb-20">
+          <div class="max-w-[496.56px] mx-auto flex flex-col items-center gap-6">
+            <p class="text-center text-rose-500 text-lg font-normal font-['Lexend'] leading-normal">
+              Testimonials
+            </p>
+
+            <div class="relative z-0">
+              <span class="absolute -left-[25px] -top-[9px] w-16 h-16 bg-gradient-to-br from-cyan-400 via-orange-400 to-rose-500 rounded-full z-0 pointer-events-none"></span>
+
+              <h2 id="testimonials-title" class="relative z-10 text-center text-white text-4xl font-bold font-['Philosopher'] leading-[52px] tracking-wide">
+                Loved By Industry Leaders
+              </h2>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Body -->
+      <div class="w-full grid grid-cols-1 md:grid-cols-[24rem_1fr] gap-8">
+        <!-- Ảnh bên trái -->
+        <figure class="md:row-span-1">
+          <img
+            class="w-full max-w-96 md:max-w-none md:w-96 md:h-[490px] h-auto object-cover rounded-md"
+            src="https://demo.phlox.pro/agency-aestry/wp-content/uploads/sites/279/2021/05/Customer-Image.png"
+            alt="Smiling customer portrait for testimonial"
+            loading="lazy"
+            width="768"
+            height="980"
+          />
+        </figure>
+
+        <!-- Nội dung bên phải -->
+        <figure class="flex flex-col justify-center gap-12">
+          <blockquote class="max-w-[559px] text-slate-700 text-xl font-medium font-['Lexend'] leading-relaxed">
+            “These guys are incredible. They've helped us to grow our business and now the biggest problem we seem to come across is having too much business - which is the ideal problem to have.”
+          </blockquote>
+
+          <figcaption>
+            <div class="text-yellow-400 text-3xl leading-7" aria-label="5 out of 5 stars" role="img">★★★★★</div>
+            <div class="mt-3 font-['Philosopher']">
+              <div class="text-slate-700/75 text-base font-bold capitalize">Hannah Montana</div>
+              <div class="text-slate-700/75 text-base tracking-wide">CEO — Productfund</div>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- Dots -->
+      <nav class="mt-6 flex items-center justify-center gap-3" aria-label="Testimonial pagination">
+        <button type="button" class="inline-block w-3 h-3 bg-rose-500 rounded-full border border-white" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" class="inline-block w-3 h-3 bg-white rounded-full border border-gray-300" aria-label="Slide 2"></button>
+      </nav>
+
+      <!-- Logo strip -->
+      <ul class="pt-12 pb-28 grid grid-cols-2 md:grid-cols-6 gap-5 place-items-center" aria-label="Trusted by partner logos">
+        <li class="w-28 h-8 bg-slate-500/60 rounded" aria-label="Partner logo 1"></li>
+        <li class="w-24 h-9 bg-slate-500/60 rounded" aria-label="Partner logo 2"></li>
+        <li class="w-40 h-10 bg-slate-500/60 rounded" aria-label="Partner logo 3"></li>
+        <li class="w-16 h-11 bg-slate-500/60 rounded" aria-label="Partner logo 4"></li>
+        <li class="w-32 h-6 bg-slate-500/60 rounded" aria-label="Partner logo 5"></li>
+        <li class="w-32 h-6 bg-slate-500/60 rounded" aria-label="Partner logo 6"></li>
+      </ul>
+
+      <!-- Họa tiết mờ -->
+      <img
+        class="w-96 absolute left-[-15px] top-[130px]"
+        src="https://demo.phlox.pro/agency-aestry/wp-content/uploads/sites/279/2021/05/Ghost-Frame.svg"
+        alt="Decorative ghost frame"
+        loading="lazy"
+        width="384"
+        height="384"
+        aria-hidden="true"
+      />
+      <img
+        class="w-64 absolute right-0 -top-[9px]"
+        src="https://demo.phlox.pro/agency-aestry/wp-content/uploads/sites/279/2021/05/Faded-Rectangle.svg"
+        alt="Decorative faded rectangle"
+        loading="lazy"
+        width="256"
+        height="256"
+        aria-hidden="true"
+      />
+
+      <!-- Structured Data for SEO (Review) -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Review",
+        "itemReviewed": {
+          "@type": "Organization",
+          "name": "Productfund"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Hannah Montana"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "These guys are incredible. They've helped us to grow our business and now the biggest problem we seem to come across is having too much business - which is the ideal problem to have.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Your Company"
+        }
+      }
+      </script>
+       
+    </div>
+  </div>
 </section>
 
 <?php 

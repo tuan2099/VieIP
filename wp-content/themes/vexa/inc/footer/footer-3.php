@@ -2,122 +2,7 @@
     global $vexatheme_option;
     $preloader_img = get_template_directory_uri().'/assets/img/loading-1.svg' ;
 ?>
-<section id="testimonials" aria-labelledby="testimonials-title" class="bg-[#190939]">
-  <div class="max-w-[1440px] mx-auto px-6 sm:px-9">
-    <div class="max-w-[1400px] mx-auto pb-36 relative">
-      <!-- Head -->
-      <header class="pt-24 flex flex-col items-center gap-5">
-        <div class="pb-20">
-          <div class="max-w-[496.56px] mx-auto flex flex-col items-center gap-6">
-            <p class="text-center text-rose-500 text-lg font-normal font-['Lexend'] leading-normal">
-              Testimonials
-            </p>
 
-            <div class="relative z-0">
-              <span class="absolute -left-[25px] -top-[9px] w-16 h-16 bg-gradient-to-br from-cyan-400 via-orange-400 to-rose-500 rounded-full z-0 pointer-events-none"></span>
-
-              <h2 id="testimonials-title" class="relative z-10 text-center text-white text-4xl font-bold font-['Philosopher'] leading-[52px] tracking-wide">
-                Loved By Industry Leaders
-              </h2>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <!-- Body -->
-      <div class="w-full grid grid-cols-1 md:grid-cols-[24rem_1fr] gap-8">
-        <!-- Ảnh bên trái -->
-        <figure class="md:row-span-1">
-          <img
-            class="w-full max-w-96 md:max-w-none md:w-96 md:h-[490px] h-auto object-cover rounded-md"
-            src="https://demo.phlox.pro/agency-aestry/wp-content/uploads/sites/279/2021/05/Customer-Image.png"
-            alt="Smiling customer portrait for testimonial"
-            loading="lazy"
-            width="768"
-            height="980"
-          />
-        </figure>
-
-        <!-- Nội dung bên phải -->
-        <figure class="flex flex-col justify-center gap-12">
-          <blockquote class="max-w-[559px] text-slate-700 text-xl font-medium font-['Lexend'] leading-relaxed">
-            “These guys are incredible. They've helped us to grow our business and now the biggest problem we seem to come across is having too much business - which is the ideal problem to have.”
-          </blockquote>
-
-          <figcaption>
-            <div class="text-yellow-400 text-3xl leading-7" aria-label="5 out of 5 stars" role="img">★★★★★</div>
-            <div class="mt-3 font-['Philosopher']">
-              <div class="text-slate-700/75 text-base font-bold capitalize">Hannah Montana</div>
-              <div class="text-slate-700/75 text-base tracking-wide">CEO — Productfund</div>
-            </div>
-          </figcaption>
-        </figure>
-      </div>
-
-      <!-- Dots -->
-      <nav class="mt-6 flex items-center justify-center gap-3" aria-label="Testimonial pagination">
-        <button type="button" class="inline-block w-3 h-3 bg-rose-500 rounded-full border border-white" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" class="inline-block w-3 h-3 bg-white rounded-full border border-gray-300" aria-label="Slide 2"></button>
-      </nav>
-
-      <!-- Logo strip -->
-      <ul class="pt-12 pb-28 grid grid-cols-2 md:grid-cols-6 gap-5 place-items-center" aria-label="Trusted by partner logos">
-        <li class="w-28 h-8 bg-slate-500/60 rounded" aria-label="Partner logo 1"></li>
-        <li class="w-24 h-9 bg-slate-500/60 rounded" aria-label="Partner logo 2"></li>
-        <li class="w-40 h-10 bg-slate-500/60 rounded" aria-label="Partner logo 3"></li>
-        <li class="w-16 h-11 bg-slate-500/60 rounded" aria-label="Partner logo 4"></li>
-        <li class="w-32 h-6 bg-slate-500/60 rounded" aria-label="Partner logo 5"></li>
-        <li class="w-32 h-6 bg-slate-500/60 rounded" aria-label="Partner logo 6"></li>
-      </ul>
-
-      <!-- Họa tiết mờ -->
-      <img
-        class="w-96 absolute left-[-15px] top-[130px]"
-        src="https://demo.phlox.pro/agency-aestry/wp-content/uploads/sites/279/2021/05/Ghost-Frame.svg"
-        alt="Decorative ghost frame"
-        loading="lazy"
-        width="384"
-        height="384"
-        aria-hidden="true"
-      />
-      <img
-        class="w-64 absolute right-0 -top-[9px]"
-        src="https://demo.phlox.pro/agency-aestry/wp-content/uploads/sites/279/2021/05/Faded-Rectangle.svg"
-        alt="Decorative faded rectangle"
-        loading="lazy"
-        width="256"
-        height="256"
-        aria-hidden="true"
-      />
-
-      <!-- Structured Data for SEO (Review) -->
-      <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Review",
-        "itemReviewed": {
-          "@type": "Organization",
-          "name": "Productfund"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "Hannah Montana"
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "reviewBody": "These guys are incredible. They've helped us to grow our business and now the biggest problem we seem to come across is having too much business - which is the ideal problem to have.",
-        "publisher": {
-          "@type": "Organization",
-          "name": "Your Company"
-        }
-      }
-      </script>
-    </div>
-  </div>
-</section>
     
 <!-- HERO CARD -->
 <section aria-labelledby="hero-title" class="relative max-w-[1400px] -mt-[8%] mx-auto pb-28">
@@ -157,7 +42,7 @@
         />
         <button
           type="submit"
-          class="absolute right-1 top-1 h-12 sm:h-14 px-10 sm:px-[60px] rounded-[35px] bg-gradient-to-b from-blue-600 to-blue-500 text-white font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+          class="absolute right-1 top-1 h-12 sm:h-14 px-10 sm:px-[60px] rounded-[35px] bg-gradient-to-b from-[#451fc2] to-[#5d30ee] text-white font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
         >
           Send
         </button>
@@ -171,24 +56,29 @@
   <div class="max-w-[1400px] mx-auto pb-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
     <!-- LEFT big column -->
     <section class="space-y-6 lg:col-span-2" aria-labelledby="footer-cta-title">
-      <div class="w-32 h-10 bg-white" aria-hidden="true"></div>
+      <a
+        href="<?php echo esc_url( home_url( '/' ) ); ?>"
+        class="text-2xl font-bold text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
+      >
+        <img class="w-[150px]" src="<?php if(is_page() && !empty($vexatheme_meta['custom_header'])){ echo esc_url($vexatheme_meta['main_logo']['url']); } else{ echo esc_url($vexatheme_option['main_logo']['url']); }?>" alt="<?php echo esc_attr(get_bloginfo ('name')); ?>">
+      </a>
 
-      <h3 id="footer-cta-title" class="text-slate-800 text-2xl sm:text-3xl font-bold font-['Philosopher'] leading-9 sm:leading-10">
+      <h3 id="footer-cta-title" class="text-[#7c91b3] text-2xl sm:text-3xl font-bold font-['Philosopher'] leading-9 sm:leading-10">
         We’re Ready to Grow With You. Talk<br/>to an Expert Today.
       </h3>
 
       <div class="flex items-center gap-4 flex-wrap">
-        <a href="#contact" class="inline-flex items-center h-12 px-12 rounded-[35px] bg-gradient-to-b from-blue-600 to-blue-500 text-white text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" title="Get in touch">
+        <a href="#contact" class="inline-flex items-center h-12 px-12 rounded-[35px] bg-gradient-to-b from-[#451fc2] to-[#5d30ee] text-white text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" title="Get in touch">
           GET IN TOUCH <span class="ml-2 text-base" aria-hidden="true">&rsaquo;</span>
         </a>
 
         <span class="h-8 w-2 bg-blue-300" aria-hidden="true"></span>
 
         <div class="flex items-center gap-3">
-          <span class="inline-block w-6 h-6 bg-rose-500 rounded" aria-hidden="true"></span>
+          <i class="fa-solid fa-phone w-6 h-6 text-rose-500"></i>
           <div class="leading-tight">
-            <div class="text-slate-600/80 text-xs">CALL US NOW!</div>
-            <a href="tel:5666787813" class="text-slate-800 text-base font-bold" title="Call 566-678-7813">566-678-7813</a>
+            <div class="text-[#7C91B3C2] text-xs">CALL US NOW!</div>
+            <a href="tel:5666787813" class="text-[#7c91b3] text-base font-bold" title="Call 566-678-7813"><?php echo esc_html($vexatheme_option['telphone']); ?></a>
           </div>
         </div>
       </div>
@@ -196,89 +86,104 @@
 
     <!-- Company -->
     <nav aria-labelledby="footer-company-title" class="space-y-4">
-      <h4 id="footer-company-title" class="text-slate-800 text-lg font-bold font-['Philosopher']">Company</h4>
-      <ul class="space-y-2 pl-3 relative">
-        <li class="relative pl-3">
-          <span class="absolute -left-3 top-2 w-[5px] h-[5px] bg-rose-500 rounded-full" aria-hidden="true"></span>
-          <a href="#home" class="text-slate-600/80 hover:text-slate-700 focus:outline-none focus:underline">Home</a>
-        </li>
-        <li class="relative pl-3">
-          <span class="absolute -left-3 top-2 w-[5px] h-[5px] bg-rose-500 rounded-full" aria-hidden="true"></span>
-          <a href="#services" class="text-slate-600/80 hover:text-slate-700 focus:outline-none focus:underline">Services</a>
-        </li>
-        <li class="relative pl-3">
-          <span class="absolute -left-3 top-2 w-[5px] h-[5px] bg-rose-500 rounded-full" aria-hidden="true"></span>
-          <a href="#portfolio" class="text-slate-600/80 hover:text-slate-700 focus:outline-none focus:underline">Portfolio</a>
-        </li>
-        <li class="relative pl-3">
-          <span class="absolute -left-3 top-2 w-[5px] h-[5px] bg-rose-500 rounded-full" aria-hidden="true"></span>
-          <a href="#blog" class="text-slate-600/80 hover:text-slate-700 focus:outline-none focus:underline">Blog</a>
-        </li>
-        <li class="relative pl-3">
-          <span class="absolute -left-3 top-2 w-[5px] h-[5px] bg-rose-500 rounded-full" aria-hidden="true"></span>
-          <a href="#contact" class="text-slate-600/80 hover:text-slate-700 focus:outline-none focus:underline">Contact Us</a>
-        </li>
-        <li class="relative pl-3">
-          <span class="absolute -left-3 top-2 w-[5px] h-[5px] bg-rose-500 rounded-full" aria-hidden="true"></span>
-          <a href="#about" class="text-slate-600/80 hover:text-slate-700 focus:outline-none focus:underline">About</a>
-        </li>
-      </ul>
+      <h4 id="footer-company-title" class="text-[#7c91b3] text-lg font-bold font-['Philosopher']">Company</h4>
+
+      <?php
+      wp_nav_menu([
+        'theme_location' => 'footer',
+        'container'      => false,
+        'menu_class'     => 'space-y-3 pl-3 relative',
+        'fallback_cb'    => false,
+      ]);
+      ?>
     </nav>
 
     <!-- Services -->
     <nav aria-labelledby="footer-services-title" class="space-y-4">
-      <h4 id="footer-services-title" class="text-slate-800 text-lg font-bold font-['Philosopher']">Services</h4>
+      <h4 id="footer-services-title" class="text-[#7c91b3] text-lg font-bold font-['Philosopher']">Services</h4>
+
       <ul class="space-y-3 pl-3">
-        <li class="relative pl-3">
-          <span class="absolute -left-3 top-2 w-[5px] h-[5px] bg-rose-500 rounded-full" aria-hidden="true"></span>
-          <a href="#corporate-identity" class="text-slate-600/80 hover:text-slate-700 focus:outline-none focus:underline">Corporate identity</a>
-        </li>
-        <li class="relative pl-3">
-          <span class="absolute -left-3 top-2 w-[5px] h-[5px] bg-rose-500 rounded-full" aria-hidden="true"></span>
-          <a href="#ui-ux-design" class="text-slate-600/80 hover:text-slate-700 focus:outline-none focus:underline">UI/UX Design</a>
-        </li>
-        <li class="relative pl-3">
-          <span class="absolute -left-3 top-2 w-[5px] h-[5px] bg-rose-500 rounded-full" aria-hidden="true"></span>
-          <a href="#brand-promotion" class="text-slate-600/80 hover:text-slate-700 focus:outline-none focus:underline">Brand Promotion</a>
-        </li>
-        <li class="relative pl-3">
-          <span class="absolute -left-3 top-2 w-[5px] h-[5px] bg-rose-500 rounded-full" aria-hidden="true"></span>
-          <a href="#full-development" class="text-slate-600/80 hover:text-slate-700 focus:outline-none focus:underline">Full Development</a>
-        </li>
-        <li class="relative pl-3">
-          <span class="absolute -left-3 top-2 w-[5px] h-[5px] bg-rose-500 rounded-full" aria-hidden="true"></span>
-          <a href="#photo-print" class="text-slate-600/80 hover:text-slate-700 focus:outline-none focus:underline">Photo &amp; Print</a>
-        </li>
+        <?php
+        $q = new WP_Query([
+          'post_type'           => 'service',
+          'posts_per_page'      => 5,          
+          'ignore_sticky_posts' => true,
+          'orderby'             => 'date',
+          'order'               => 'DESC',
+        ]);
+
+        if ( $q->have_posts() ) :
+          while ( $q->have_posts() ) : $q->the_post(); ?>
+            <li class="relative pl-3">
+              <span class="absolute -left-3 top-2 w-[5px] h-[5px] bg-rose-500 rounded-full" aria-hidden="true"></span>
+              <a href="<?php echo esc_url( get_permalink() ); ?>"
+                class="text-[#7C91B3C2] hover:text-slate-700 focus:outline-none focus:underline">
+                <?php echo esc_html( get_the_title() ); ?>
+              </a>
+            </li>
+          <?php endwhile;
+          wp_reset_postdata();
+        else : ?>
+          <li class="relative pl-3">
+            <span class="absolute -left-3 top-2 w-[5px] h-[5px] bg-rose-500 rounded-full" aria-hidden="true"></span>
+            <span class="text-slate-500/80">Chưa có dịch vụ.</span>
+          </li>
+        <?php endif; ?>
       </ul>
     </nav>
 
+
     <!-- Latest Articles -->
     <section aria-labelledby="footer-latest-title" class="space-y-4">
-      <h4 id="footer-latest-title" class="text-slate-800 text-lg font-bold font-['Philosopher']">Latest Articles</h4>
+      <h4 id="footer-latest-title" class="text-[#7c91b3] text-lg font-bold font-['Philosopher']">
+        Latest Articles
+      </h4>
 
-      <article class="relative pl-3">
-        <span class="absolute -left-3 top-2 w-[5px] h-[5px] bg-rose-500 rounded-full" aria-hidden="true"></span>
-        <h5 class="sr-only">Article 1</h5>
-        <a href="#" class="underline text-slate-700/80 hover:text-slate-800">
-          Creative agencies are probably one of the most exciting places to work at. However, working at an agency isn’t the right fit for
-        </a>
-        <div class="mt-2 text-xs text-slate-500/70">
-          <time datetime="2021-09-12">September 12, 2021</time>
-        </div>
-      </article>
+      <?php
+      // Lấy 2 bài mới nhất (đổi số ở posts_per_page nếu cần)
+      $latest = new WP_Query([
+        'post_type'           => 'post',
+        'posts_per_page'      => 2,
+        'ignore_sticky_posts' => true,
+      ]);
 
-      <article class="relative pl-3">
-        <span class="absolute -left-3 top-2 w-[5px] h-[5px] bg-rose-500 rounded-full" aria-hidden="true"></span>
-        <h5 class="sr-only">Article 2</h5>
-        <a href="#" class="underline text-slate-700/80 hover:text-slate-800">
-          Creative agencies are probably one of the most exciting places to work at. However, working at an agency isn’t the right fit for
-        </a>
-        <div class="mt-2 text-xs text-slate-500/70">
-          <time datetime="2021-09-12">September 12, 2021</time>
-        </div>
-      </article>
+      if ( $latest->have_posts() ) :
+        while ( $latest->have_posts() ) : $latest->the_post();
+          $excerpt = get_the_excerpt();
+        if ( ! $excerpt ) {
+          $excerpt = wp_strip_all_tags( get_the_content() );
+        }
+        // Giới hạn 30 từ
+        $excerpt = wp_trim_words( $excerpt, 15, '…' );
+      ?>
+        <article class="relative pl-3">
+          <span class="absolute -left-3 top-2 w-[5px] h-[5px] bg-rose-500 rounded-full" aria-hidden="true"></span>
+          <h5 class="sr-only"><?php the_title(); ?></h5>
+
+          <a href="<?php echo esc_url( get_permalink() ); ?>"
+            class="underline text-[#7C91B3C2] hover:text-slate-800 text-justify block">
+            <?php echo esc_html( $excerpt ); ?>
+          </a>
+
+          <div class="mt-2 text-xs text-slate-500/70">
+            <time datetime="<?php echo esc_attr( get_the_date('c') ); ?>">
+              <?php echo esc_html( get_the_date() ); ?>
+            </time>
+          </div>
+        </article>
+      <?php
+        endwhile;
+        wp_reset_postdata();
+      else :
+      ?>
+        <article class="relative pl-3">
+          <span class="absolute -left-3 top-2 w-[5px] h-[5px] bg-rose-500 rounded-full" aria-hidden="true"></span>
+          <h5 class="sr-only">No articles</h5>
+          <span class="text-slate-500/80">Chưa có bài viết.</span>
+        </article>
+      <?php endif; ?>
     </section>
-  </div>
+
 
   <!-- Structured Data: Organization with contact -->
   <script type="application/ld+json">
@@ -296,10 +201,7 @@
 <div class="max-w-[1440px] mx-auto px-6 sm:px-9 bg-black" role="contentinfo">
     <div class="max-w-[1440px] mx-auto">
         <div class="py-5 text-slate-300 text-xs sm:text-sm text-center">
-            <p>
-                © <time datetime="2025">2025</time>
-                <span class="font-semibold">Aestry Agency</span> — Phlox Elementor WordPress Theme. All rights reserved.
-            </p>
+          <?php echo wp_kses_post($vexatheme_option['_copyright']); ?>
         </div>
     </div>
 </div>
