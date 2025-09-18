@@ -267,86 +267,8 @@ get_header();
   </div>
 </section>
 
-<section class="py-20">
-  <div class="container mx-auto px-4 md:px-6 max-w-[1440px]">
-    <!-- Section Header -->
-    <header class="mb-12">
-      <p
-        class="text-[18px] text-pink-500 uppercase tracking-wide"
-      >
-        Our Services
-      </p>
-      <h1 class="mt-3 text-3xl md:text-4xl font-bold leading-tight relative">
-        <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[1%] -top-[15%]"></div>
-        <span
-          class=""
-        >
-          Wide Variety of Services
-        </span>
-      </h1>
-    </header>
-
-    <!-- Services Grid -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <?php
-        $args = array(
-          'post_type'      => 'service',
-          'posts_per_page' => 6,
-        );
-        $query = new WP_Query($args);
-
-        if ($query->have_posts()) :
-          while ($query->have_posts()) : $query->the_post();
-            $thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large');
-      ?>
-          <a href="<?php the_permalink(); ?>" class="block group">
-            <article
-              class="relative overflow-hidden rounded-2xl bg-[#15151f] 
-                    group border-4 border-transparent hover:border-red-500 
-                    transition-all duration-500"
-            >
-              <!-- Background Image -->
-              <?php if ($thumbnail): ?>
-                <img
-                  src="<?php echo esc_url($thumbnail); ?>"
-                  alt="<?php the_title_attribute(); ?>"
-                  class="absolute inset-0 w-full h-full object-cover opacity-0 
-                        group-hover:opacity-100 transition-opacity duration-700"
-                  loading="lazy"
-                />
-              <?php else: ?>
-                <img
-                  src="https://picsum.photos/600/400?random=<?php echo rand(1,1000); ?>"
-                  alt="<?php the_title_attribute(); ?>"
-                  class="absolute inset-0 w-full h-full object-cover opacity-0 
-                        group-hover:opacity-100 transition-opacity duration-700"
-                  loading="lazy"
-                />
-              <?php endif; ?>
-
-              <!-- Overlay -->
-              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-
-              <!-- Text -->
-              <div
-                class="relative p-6 flex items-center h-40 md:h-56 
-                      transform translate-x-0 group-hover:translate-x-[40%] 
-                      transition-transform duration-700"
-              >
-                <h2 class="text-[24px] font-semibold text-white">
-                  <?php the_title(); ?>
-                </h2>
-              </div>
-            </article>
-            </a>
-      <?php
-          endwhile;
-          wp_reset_postdata();
-        endif;
-      ?>
-    </div>
-  </div>
-</section>
+<!-- Services Section -->
+<?php get_template_part( 'template-parts/services-section' ); ?>
 
 <section class="py-20">
   <div class="container mx-auto px-4 md:px-6 max-w-[1440px]">
@@ -574,136 +496,10 @@ get_header();
   </div>
 </section>
 
-<section class="py-20">
-  <div class="container mx-auto px-4 md:px-6 max-w-[1440px]">
-    <div class="grid md:grid-cols-3 items-center gap-3">
-      <!-- Left Content -->
-      <div>
-        <p class="text-[18px] text-pink-500 uppercase tracking-wide">
-          About Us
-        </p>
-        <h1 class="mt-2 text-3xl md:text-[40px] font-bold leading-tight relative">
-          <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[5%] -top-[7%]"></div>
-          <span class=""> We Are Who Will<br />Grow Your Business </span>
-        </h1>
-        <p class="mt-6 text-base text-gray-400 leading-relaxed max-w-lg">
-          Over the years, we have worked with Fortune 500s and brand-new
-          startups. We help ambitious businesses like yours generate more
-          profits by building awareness, driving web traffic, connecting
-          with customers, and growing overall sales. Give us a call.
-        </p>
-        <div class="mt-8">
-          <a
-            href="#"
-            class="inline-block rounded-full border-2 border-[#552ae0] px-8 py-3 text-[16px] font-medium text-purple-200 hover:bg-[#552ae0] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
-            aria-label="Know more about us"
-          >
-            Know More
-          </a>
-        </div>
-      </div>
-
-      <!-- Right Images -->
-      <div class="grid grid-cols-2 gap-1 col-span-2 static lg:relative h-full">
-        <div class="col-span-2 md:col-span-1 static lg:absolute right-[40%] -top-[30%]">
-          <img
-            src="https://demo.phlox.pro/agency-aestry/wp-content/uploads/sites/279/2021/05/About-image-1.png"
-            alt="Team brainstorming session"
-            class="w-full rounded-2xl"
-            width="636"
-            height="484"
-            loading="lazy"
-          />
-        </div>
-        <div class="col-span-2 md:col-span-1 static lg:absolute right-0 -top-[60%]">
-          <img
-            src="https://demo.phlox.pro/agency-aestry/wp-content/uploads/sites/279/2021/05/About-image-2.png"
-            alt="Smiling professional woman"
-            class="w-full rounded-2xl"
-            width="400"
-            height="500"
-            loading="lazy"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- About Section -->
+<?php get_template_part( 'template-parts/about-section' ); ?>
 <!-- Blog Section -->
-<section class="py-16">
-    <div class="container mx-auto px-4 md:px-6 max-w-[1440px]">
-        <!-- Section Header -->
-        <header class="flex flex-col md:flex-row md:items-center md:justify-between mb-12" >
-            <div>
-                <p class="text-[18px] text-pink-500 uppercase tracking-wide">
-                Blog
-                </p>
-                <h2 class="mt-2 text-3xl md:text-[40px] font-bold leading-tight relative">
-                <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[8%] -top-[7%]"></div>
-                <span class=""> Latest Posts From Blog </span>
-                </h2>
-            </div>
-            <div class="mt-6 md:mt-0">
-                <a
-                href="#"
-                class="inline-block rounded-full border-2 border-[#552ae0] px-8 py-3 text-[16px] font-medium text-purple-200 hover:bg-[#552ae0] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
-                >
-                Read All Posts
-                </a>
-            </div>
-        </header>
-
-        <!-- Posts Grid -->
-        <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
-        <?php
-            // WP_Query lấy 3 bài viết mới nhất
-            $args = array(
-                'post_type'      => 'post',
-                'posts_per_page' => 3,
-            );
-            $query = new WP_Query($args);
-
-            if ($query->have_posts()) :
-                while ($query->have_posts()) : $query->the_post();
-            ?>
-                <!-- Post Card -->
-                <article class="flex flex-col">
-                    <a href="<?php the_permalink(); ?>" class="block overflow-hidden rounded-2xl">
-                        <?php if (has_post_thumbnail()) : ?>
-                            <?php the_post_thumbnail('medium_large', [
-                                'class' => 'w-full object-cover',
-                                'loading' => 'lazy'
-                            ]); ?>
-                        <?php else : ?>
-                            <img src="https://picsum.photos/600/400" alt="<?php the_title(); ?>" class="w-full object-cover" loading="lazy" />
-                        <?php endif; ?>
-                    </a>
-                    <div class="mt-4 flex flex-col flex-1">
-                        <time datetime="<?php echo get_the_date('c'); ?>" class="text-xs font-semibold uppercase text-blue-400">
-                            <?php echo get_the_date(); ?>
-                        </time>
-                        <h3 class="mt-2 text-lg font-semibold leading-snug">
-                            <a href="<?php the_permalink(); ?>" class="hover:text-pink-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-400">
-                                <?php the_title(); ?>
-                            </a>
-                        </h3>
-                        <div class="mt-3">
-                            <a href="<?php the_permalink(); ?>" aria-label="Read more about <?php the_title(); ?>" class="inline-flex items-center text-pink-400 hover:text-pink-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-            <?php
-                endwhile;
-                wp_reset_postdata();
-            endif;
-            ?>
-        </div>
-    </div>
-</section>
+<?php get_template_part( 'template-parts/blog-section' ); ?>
 
 <section id="testimonials" aria-labelledby="testimonials-title" class="bg-[#190939]">
   <div class="max-w-[1440px] mx-auto px-6 sm:px-9">
@@ -764,15 +560,15 @@ get_header();
       </nav>
 
       <!-- Logo strip -->
-      <ul class="pt-12 pb-28 grid grid-cols-2 md:grid-cols-6 gap-5 place-items-center" aria-label="Trusted by partner logos">
+      <!-- <ul class="pt-12 pb-28 grid grid-cols-2 md:grid-cols-6 gap-5 place-items-center" aria-label="Trusted by partner logos">
         <li class="w-28 h-8 bg-slate-500/60 rounded" aria-label="Partner logo 1"></li>
         <li class="w-24 h-9 bg-slate-500/60 rounded" aria-label="Partner logo 2"></li>
         <li class="w-40 h-10 bg-slate-500/60 rounded" aria-label="Partner logo 3"></li>
         <li class="w-16 h-11 bg-slate-500/60 rounded" aria-label="Partner logo 4"></li>
         <li class="w-32 h-6 bg-slate-500/60 rounded" aria-label="Partner logo 5"></li>
         <li class="w-32 h-6 bg-slate-500/60 rounded" aria-label="Partner logo 6"></li>
-      </ul>
-
+      </ul> -->
+      <?php get_template_part( 'template-parts/partner-section' ); ?>
       <!-- Họa tiết mờ -->
       <img
         class="w-96 absolute left-[-15px] top-[130px]"
@@ -792,33 +588,6 @@ get_header();
         height="256"
         aria-hidden="true"
       />
-
-      <!-- Structured Data for SEO (Review) -->
-      <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Review",
-        "itemReviewed": {
-          "@type": "Organization",
-          "name": "Productfund"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "Hannah Montana"
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "reviewBody": "These guys are incredible. They've helped us to grow our business and now the biggest problem we seem to come across is having too much business - which is the ideal problem to have.",
-        "publisher": {
-          "@type": "Organization",
-          "name": "Your Company"
-        }
-      }
-      </script>
-       
     </div>
   </div>
 </section>
