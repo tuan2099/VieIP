@@ -26,8 +26,8 @@ if ( !empty($vexatheme_option['vexatheme_scroll_top']) ) : ?>
           <!-- Desktop Menu -->
            <?php
             wp_nav_menu([
-              'theme_location' => 'primary', // bạn phải register trước menu location này
-              'container'      => false,     // bỏ <div> bọc ngoài
+              'theme_location' => 'primary',
+              'container'      => false,
               'menu_class'     => 'hidden md:flex items-center space-x-16 text-[18px] font-medium',
               'link_class'     => 'hover:text-pink-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-400',
               'fallback_cb'    => false,

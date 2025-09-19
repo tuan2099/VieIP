@@ -6,9 +6,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <?php wp_head(); ?>
 </head>
+<style>
+    .custom_bg1 {
+      background-color: transparent;
+      background-image: linear-gradient(210deg, #FFFFFF00 33%, #FFFFFF45 190%);
+    }
 
+    .custom_blur {
+      background-image: linear-gradient(227deg, #06969724 3%, #ae634717 51%, #ff003726 97%);
+    background-blend-mode: normal;
+    --f2w-order: 0;
+    filter: blur(25px);
+    border-radius: 542.8px;
+    width: 1509px;
+    height: 1002px;
+    position: absolute;
+    top: 0;
+    left: -72px;
+    }
+
+    .custom_bg_text {
+      background-image: linear-gradient(130deg, #3e8579 15%, #cf572e 47%, #de3d4a 97%);
+      border-radius: 50%;
+    }
+  </style>
 <body class="bg-[#0b0b15] text-white" <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <?php
