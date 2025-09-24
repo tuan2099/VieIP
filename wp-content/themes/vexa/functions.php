@@ -76,3 +76,27 @@ add_filter('walker_nav_menu_start_el', function($item_output, $item, $depth, $ar
     return $item_output;
 }, 10, 4);
 
+// beracrum
+function vexa_breadcrumbs() {
+  if ( is_front_page() ) return;
+
+  $home_url = home_url('/');
+  echo '<nav class="text-sm" aria-label="Breadcrumb">';
+  echo '<ol class="flex items-center gap-2 text-gray-300">';
+
+  // Home
+  echo '<li><a href="'.$home_url.'" class="text-[20px] text-[#e432568f] hover:text-white">Home</a></li>';
+
+  // separator
+  $sep = '<span class="opacity-60">›</span>';
+
+  // Current
+  echo '<li class="px-1">'.$sep.'</li>';
+  echo '<li class="text-[20px] text-[#e43256]">'.esc_html(get_the_title()).'</li>';
+
+  echo '</ol></nav>';
+}
+
+add_action('after_setup_theme', function () {
+    add_theme_support('post-thumbnails');
+});
