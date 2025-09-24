@@ -2,7 +2,7 @@
 $logos = get_field('partner_logos'); // ACF Gallery
 
 if ($logos && is_array($logos)) : ?>
-<ul class="pt-12 pb-28 grid grid-cols-2 md:grid-cols-6 gap-5 place-items-center" aria-label="Trusted by partner logos">
+<ul class="pt-12 pb-28 grid grid-cols-2 md:grid-cols-5 gap-5 place-items-center" aria-label="Trusted by partner logos">
   <?php foreach ($logos as $img) :
     // Chuẩn hoá dữ liệu ảnh
     $id = 0; $url = ''; $alt = '';

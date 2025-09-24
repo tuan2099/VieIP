@@ -27,19 +27,19 @@ if ( $hero ) {
         <div class="grid lg:grid-cols-2 gap-1 items-center">
             <!-- Left Content -->
             <div>
-                <h1 class="text-3xl md:text-[65px] font-bold leading-tight relative">
+                <h1 class="text-3xl md:text-[65px] font-bold leading-tight relative font-['Philosopher']">
                 <div class="custom_bg_text absolute -z-10 h-[110px] w-[110px] -left-[5%] -top-[15%]"></div>
                 <?php
                     echo wp_kses_post( $title );
                     ?>
                 </h1>
-                <p class="mt-6 text-base text-gray-300 leading-relaxed max-w-lg">
+                <p class="font-['Lexend'] mt-6 text-base text-gray-300 leading-relaxed max-w-lg">
                 <?php echo esc_html( $desc ); ?>
                 </p>
                 <div class="mt-8">
                 <a
                     href="<?php echo esc_url( $btn_link ?: '#' ); ?>"
-                    class="inline-block bg-[#552ae0] rounded-full border-2 border-[#552ae0] px-12 py-3 text-[16px] font-medium text-purple-200 hover:bg-[#552ae0] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#552ae0]"
+                    class="font-['Lexend'] inline-block bg-[#552ae0] rounded-full border-2 border-[#552ae0] px-12 py-3 text-[16px] font-medium text-purple-200 hover:bg-[#552ae0] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#552ae0]"
                     aria-label="Contact us"
                 >
                     <?php echo esc_html( $btn_text ); ?>

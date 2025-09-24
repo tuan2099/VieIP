@@ -13,18 +13,18 @@ $button_link  = $blog['button_link']  ?? '';
         <!-- Section Header -->
         <header class="flex flex-col md:flex-row md:items-center md:justify-between mb-12" >
             <div>
-                <p class="text-[18px] text-pink-500 uppercase tracking-wide">
+                <p class="text-sm font-semibold text-[#E43256] tracking-wide font-['Lexend']">
                 <?php echo esc_html( $sub_title ); ?>
                 </p>
-                <h2 class="mt-2 text-3xl md:text-[40px] font-bold leading-tight relative">
-                <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[8%] -top-[7%]"></div>
-                <span class=""><?php echo esc_html( $title ); ?></span>
+                <h2 class="mt-2 text-3xl md:text-[40px] font-bold leading-tight relative font-['Philosopher']">
+                <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[8%] -top-[7%] "></div>
+                <span class="font-['Philosopher']"><?php echo esc_html( $title ); ?></span>
                 </h2>
             </div>
             <div class="mt-6 md:mt-0">
                 <a
                 href="<?php echo $button_link ? esc_url( $button_link ) : '#'; ?>"
-                class="inline-block rounded-full border-2 border-[#552ae0] px-8 py-3 text-[16px] font-medium text-purple-200 hover:bg-[#552ae0] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
+                class="font-['Lexend'] inline-block rounded-full border-2 border-[#552ae0] px-8 py-3 text-[16px] font-medium text-purple-200 hover:bg-[#552ae0] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
                 >
                 <?php echo esc_html( $button_title ); ?>
                 </a>
@@ -57,11 +57,11 @@ $button_link  = $blog['button_link']  ?? '';
                         <?php endif; ?>
                     </a>
                     <div class="mt-4 flex flex-col flex-1">
-                        <time datetime="<?php echo get_the_date('c'); ?>" class="text-xs font-semibold uppercase text-[#6A7C99]">
+                        <time datetime="<?php echo get_the_date('c'); ?>" class="font-['Lexend'] text-xs font-semibold uppercase text-[#6A7C99]">
                             <?php echo get_the_date(); ?>
                         </time>
                         <h3 class="mt-2 text-lg font-semibold leading-snug">
-                            <a href="<?php the_permalink(); ?>" class="hover:text-pink-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-400">
+                            <a href="<?php the_permalink(); ?>" class="font-['Philosopher'] hover:text-pink-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-400">
                                 <?php the_title(); ?>
                             </a>
                         </h3>

@@ -20,16 +20,16 @@
       <div class="col-span-3">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
           <div>
-            <p class="text-sm font-semibold text-pink-500 uppercase tracking-wide">Portfolio</p>
+            <p class="text-sm font-semibold text-[#E43256] tracking-wide font-['Lexend']">Portfolio</p>
             <h1 class="mt-2 text-3xl md:text-4xl font-bold leading-tight relative">
-              <div class="custom_bg_text absolute -z-10 h-[110px] w-[110px] -left-[5%] -top-[15%]"></div>
-              <span class="">
+              <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[5%] -top-[15%]"></div>
+              <span class="font-['Philosopher']">
                 Our Recent Works
               </span>
             </h1>
           </div>
           <div class="mt-4 md:mt-0">
-            <a href="#" class="inline-flex items-center rounded-full border border-purple-500 px-5 py-2 text-sm font-medium text-purple-200 hover:bg-purple-500 hover:text-white">
+            <a href="#" class="font-['Lexend'] inline-flex hover:bg-[#552ae0] rounded-full border-2 border-[#552ae0] px-12 py-3 text-[16px] font-medium text-purple-200 hover:bg-[#552ae0] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#552ae0]">
               Explore All Projects
               <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>

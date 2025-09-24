@@ -1,3 +1,16 @@
+<?php
+$page_id = get_queried_object_id();
+
+$sec = get_field('our_team_sections', $page_id);
+
+$subtitle    = isset($sec['subtitle'])    ? $sec['subtitle']    : '';
+$title       = isset($sec['title'])       ? $sec['title']       : '';
+$desc        = isset($sec['desc'])        ? $sec['desc']        : '';
+$button      = isset($sec['button'])      ? $sec['button']      : '';
+$button_link = isset($sec['button_link']) ? $sec['button_link'] : '';
+?>
+
+
 <section class="py-20">
     <div class="container mx-auto px-4 md:px-6 max-w-[1440px]">
         <div class="">
@@ -6,31 +19,28 @@
                 <div class="grid sm:grid-cols-3 gap-6">
                     <div class="flex flex-col justify-center">
                         <p
-                        class="text-sm font-semibold text-pink-500 uppercase tracking-wide"
+                        class="text-sm font-semibold text-[#E43256] tracking-wide font-['Lexend']"
                         >
-                        Our Team
+                        <?php echo esc_html($subtitle); ?>
                         </p>
                         <h1 class="mt-3 text-3xl md:text-4xl font-bold leading-tight relative">
                         <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[5%] -top-[15%]"></div>
                         <span
-                            class=""
+                            class="font-['Philosopher']"
                         >
-                            Best Team Ever
+                            <?php echo esc_html($title); ?>
                         </span>
                         </h1>
                         <p
-                        class="mt-6 text-base text-gray-400 leading-relaxed max-w-md"
+                        class="mt-6 text-base text-gray-400 leading-relaxed max-w-md font-['Lexend']"
                         >
-                        We have assembled a creative team of like-minded people who
-                        like to challenge themselves and get better with each new
-                        case.
+                        <?php echo wp_kses_post(nl2br($desc)); ?>
                         </p>
                     </div>
                     <!-- Member -->
                                 <?php
-                        // Lấy danh sách thành viên
                         $q = new WP_Query([
-                        'post_type'      => 'team',           // đổi nếu bạn đặt tên khác
+                        'post_type'      => 'team',          
                         'posts_per_page' => -1,
                         'orderby'        => ['menu_order' => 'ASC', 'date' => 'DESC'],
                         'order'          => 'ASC',
@@ -39,10 +49,9 @@
                         if ( $q->have_posts() ) : ?>
                             <?php while ( $q->have_posts() ) : $q->the_post();
 
-                            // Ảnh: ưu tiên featured image, fallback ACF 'photo' (nếu bạn dùng)
                             $thumb_id  = get_post_thumbnail_id();
                             if ( ! $thumb_id && function_exists('get_field') ) {
-                                $photo = get_field('photo'); // ACF Image (ID/Array đều được)
+                                $photo = get_field('photo'); 
                                 $thumb_id = is_array($photo) ? ($photo['ID'] ?? 0) : $photo;
                             }
                             $img_html = $thumb_id
@@ -68,7 +77,7 @@
                                             opacity-0 group-hover:opacity-100 transition-opacity duration-500 
                                             flex flex-col justify-end p-6 text-white">
                                 <div>
-                                    <h3 class="font-semibold text-lg"><?php the_title(); ?></h3>
+                                    <h3 class="font-semibold text-lg font-['Philosopher']"><?php the_title(); ?></h3>
                                     <?php if ($position): ?>
                                     <p class="text-sm"><?php echo esc_html($position); ?></p>
                                     <?php endif; ?>
@@ -102,11 +111,11 @@
                     <!-- CTA Button -->
                     <div class="mt-8 flex items-center text-center custom_bg1 rounded-2xl">
                         <a
-                        href="#"
+                        href="<?php echo esc_url($button_link); ?>"
                         class="inline-flex mx-auto items-center rounded-full border-2 border-[#552ae0] px-8 py-3 text-[16px] font-medium text-purple-200 hover:bg-[#552ae0] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
-                        aria-label="View the whole crew"
+                        aria-label="View the whole crew font-['Lexend']"
                         >
-                        View the Whole Crew
+                        <?php echo esc_html($button); ?>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             class="ml-2 h-4 w-4"

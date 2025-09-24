@@ -10,11 +10,11 @@ $title        = $services['title']        ?? '';
     <!-- Section Header -->
     <header class="mb-12">
       <p
-        class="text-[18px] text-pink-500 uppercase tracking-wide"
+        class="text-sm font-semibold text-[#E43256] tracking-wide font-['Lexend']"
       >
         <?php echo esc_html( $sub_title ); ?>
       </p>
-      <h1 class="mt-3 text-3xl md:text-4xl font-bold leading-tight relative">
+      <h1 class="font-['Philosopher'] mt-3 text-3xl md:text-4xl font-bold leading-tight relative">
         <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[1%] -top-[15%]"></div>
         <span
           class=""
@@ -71,7 +71,7 @@ $title        = $services['title']        ?? '';
                       transform translate-x-0 group-hover:translate-x-[40%] 
                       transition-transform duration-700"
               >
-                <h2 class="text-[24px] font-semibold text-white">
+                <h2 class="text-[24px] font-semibold text-white font-['Philosopher']">
                   <?php the_title(); ?>
                 </h2>
               </div>

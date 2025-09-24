@@ -33,6 +33,12 @@
       background-image: linear-gradient(130deg, #3e8579 15%, #cf572e 47%, #de3d4a 97%);
       border-radius: 50%;
     }
+
+    .entry-content figure.wp-block-image {
+      height: auto !important;       /* gỡ height:100% */
+      max-height: none !important;   /* phòng khi có max-height */
+      align-self: auto;              /* nếu figure nằm trong flex container */
+    }
   </style>
 <body class="bg-[#0b0b15] text-white" <?php body_class(); ?>>
     <?php wp_body_open(); ?>

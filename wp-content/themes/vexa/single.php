@@ -9,8 +9,6 @@ get_header();?>
     <div class="custom_blur -z-10"></div>
 </section>
 
-
-
 <!-- Content -->
 <div class="container mx-auto px-4 md:px-6 max-w-[1440px] py-12 mb-64">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 "> 
@@ -36,7 +34,9 @@ get_header();?>
                         <?php echo get_the_date('F j, Y'); ?>
                     </div>
                 </div>
-                <?php the_content(); ?>
+                <div class="entry-content">
+                    <?php the_content(); ?>
+                </div>
             </div>
             <hr class="border-t border-white/20 my-8 mx-[10%]">
 

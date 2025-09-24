@@ -44,6 +44,10 @@ function my_menu_link_class($atts, $item, $args) {
         if ($item->title === 'Contact Us') {
             $atts['class'] = 'inline-block bg-[#552ae0] rounded-full border-2 border-[#552ae0] px-12 py-3 text-[16px] font-medium text-purple-200 hover:bg-[#552ae0] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#552ae0]';
         }
+
+        if ($item->title === 'Liên hệ') {
+            $atts['class'] = 'inline-block hover:bg-[#552ae0] rounded-full border-2 border-[#552ae0] px-12 py-3 text-[16px] font-medium text-purple-200 hover:bg-[#552ae0] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#552ae0]';
+        }
     }
     return $atts;
 }
@@ -100,3 +104,49 @@ function vexa_breadcrumbs() {
 add_action('after_setup_theme', function () {
     add_theme_support('post-thumbnails');
 });
+
+/**
+ * Allow SVG upload (admin only) + fix mime + basic safety check + show in Media.
+ */
+
+// 1) Cho phép SVG (giới hạn admin để an toàn)
+add_filter('upload_mimes', function ($mimes) {
+  if ( current_user_can('manage_options') ) {
+    $mimes['svg']  = 'image/svg+xml';
+    $mimes['svgz'] = 'image/svg+xml';
+  }
+  return $mimes;
+});
+
+// 2) Sửa kiểm tra loại file để WP không chặn SVG
+add_filter('wp_check_filetype_and_ext', function ($data, $file, $filename, $mimes, $real_mime) {
+  $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+  if ( in_array($ext, ['svg','svgz'], true) ) {
+    $data['ext']             = 'svg';
+    $data['type']            = 'image/svg+xml';
+    $data['proper_filename'] = $filename;
+  }
+  return $data;
+}, 10, 5);
+
+// 3) Chặn SVG có <script> hoặc on* handlers (an toàn cơ bản)
+add_filter('wp_handle_upload_prefilter', function ($file) {
+  if ( isset($file['type']) && $file['type'] === 'image/svg+xml' ) {
+    $contents = @file_get_contents($file['tmp_name']);
+    if ( $contents && preg_match('/<\s*script|on\w+\s*=/i', $contents) ) {
+      $file['error'] = __('SVG contains scripts/event handlers. Please export a clean SVG.', 'textdomain');
+    }
+  }
+  return $file;
+});
+
+// 4) Sửa hiển thị thumbnail SVG trong Media/Library
+add_action('admin_head', function () {
+  echo '<style>
+    td.media-icon img[src$=".svg"], 
+    .attachment .thumbnail img[src$=".svg"],
+    img[src$=".svg"].attachment-post-thumbnail { width:100%!important; height:auto!important; }
+  </style>';
+});
+
+

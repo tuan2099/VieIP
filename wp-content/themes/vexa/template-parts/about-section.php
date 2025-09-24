@@ -1,6 +1,5 @@
 
 <?php
-// Lấy group (từ post hiện tại, nếu không có thử lấy ở Options)
 $about = get_field('about_section') ?: get_field('about_section','option') ?: [];
 
 // Texts
@@ -10,7 +9,6 @@ $desc_raw     = $about['desc']         ?? '';
 $button_title = $about['button_title'] ?? '';
 $button_link  = $about['button_link']  ?? '';
 
-// Cho phép một số thẻ inline trong title để giữ định dạng
 $allowed_inline = [
     'span' => ['class' => true],
     'strong' => [], 'b' => [], 'em' => [], 'i' => [], 'u' => [], 'br' => []
@@ -18,7 +16,6 @@ $allowed_inline = [
 $title_html = $title_raw ? wp_kses($title_raw, $allowed_inline) : '';
 $desc_html  = $desc_raw ? wpautop(esc_html($desc_raw)) : '';
 
-// Ảnh 1 — tên field có thể là imge_1 hoặc image_1
 $img1_field = $about['imge_1'] ?? $about['image_1'] ?? null;
 $img1_url = $img1_alt = ''; $img1_w = ''; $img1_h = '';
 if ($img1_field) {
@@ -35,7 +32,6 @@ if ($img1_field) {
     }
 }
 
-// Ảnh 2 — screenshot thấy type đang Text (URL). Nếu bạn đổi sang Image thì code vẫn nhận.
 $img2_field = $about['imgge_2'] ?? $about['image_2'] ?? null;
 $img2_url = $img2_alt = ''; $img2_w = ''; $img2_h = '';
 if ($img2_field) {
@@ -58,20 +54,20 @@ if ($img2_field) {
         <div class="grid md:grid-cols-3 items-center gap-3">
             <!-- Left Content -->
             <div>
-                <p class="text-[18px] text-pink-500 uppercase tracking-wide">
+                <p class="text-sm font-semibold text-[#E43256] tracking-wide font-['Lexend']">
                 <?php echo esc_html($sub_title); ?>
                 </p>
-                <h1 class="mt-2 text-3xl md:text-[40px] font-bold leading-tight relative">
+                <h1 class="mt-2 text-3xl md:text-[40px] font-bold leading-tight relative font-['Philosopher']">
                 <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[5%] -top-[7%]"></div>
                 <?php echo $title_html; ?>
                 </h1>
-                <p class="mt-6 text-base text-gray-400 leading-relaxed max-w-lg">
+                <p class="mt-6 text-base text-gray-400 leading-relaxed max-w-lg font-['Lexend']">
                 <?php echo $desc_html; ?>
                 </p>
                 <div class="mt-8">
                 <a
                     href="<?php echo $button_link ? esc_url($button_link) : '#'; ?>"
-                    class="inline-block rounded-full border-2 border-[#552ae0] px-8 py-3 text-[16px] font-medium text-purple-200 hover:bg-[#552ae0] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
+                    class="inline-block  font-['Lexend'] rounded-full border-2 border-[#552ae0] px-8 py-3 text-[16px] font-medium text-purple-200 hover:bg-[#552ae0] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
                     aria-label="Know more about us"
                 >
                     <?php echo esc_html($button_title); ?>

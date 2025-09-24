@@ -62,15 +62,15 @@
       $gallery = $group['partner_logos'] ?? null; // gallery array
 
       if ( $gallery && is_array($gallery) ) : ?>
-        <ul class="pt-12 pb-28 grid grid-cols-2 md:grid-cols-6 gap-5 place-items-center" aria-label="Trusted by partner logos">
+        <ul class="pt-12 pb-28 grid grid-cols-2 md:grid-cols-5 gap-9 place-items-center" aria-label="Trusted by partner logos">
           <?php foreach ( $gallery as $image ) : ?>
-            <li>
+            <li class="w-[70px]">
               <?php echo wp_get_attachment_image(
                 $image['ID'],
                 'medium',
                 false,
                 [
-                  'class' => 'max-h-24 object-contain grayscale opacity-80 hover:opacity-100 transition',
+                  'class' => 'max-h-24 w-full object-contain  grayscale opacity-80 hover:opacity-100 transition',
                   'alt'   => esc_attr($image['alt'] ?: $image['title'])
                 ]
               ); ?>
