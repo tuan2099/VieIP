@@ -62,7 +62,6 @@ get_header();?>
                                     text-white px-3 py-2 shadow-lg"
                             role="menu" aria-labelledby="shareBtn">
                             <div class="flex items-center gap-3">
-                            <!-- mỗi icon là 1 link -->
                             <a class="p-2 rounded-full hover:bg-white/20" role="menuitem" target="_blank" rel="noopener"
                                 href="https://www.facebook.com/sharer/sharer.php?u=<?=$share_url?>">
                                 <i class="fa-brands fa-facebook-f w-4 h-4"></i>
