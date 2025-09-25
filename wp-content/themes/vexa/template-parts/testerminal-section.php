@@ -21,40 +21,73 @@
       </header>
 
       <!-- Body -->
-      <div class="w-full grid grid-cols-1 md:grid-cols-[24rem_1fr] gap-8">
-        <!-- Ảnh bên trái -->
-        <figure class="md:row-span-1">
-          <img
-            class="w-full max-w-96 md:max-w-none md:w-96 md:h-[490px] h-auto object-cover rounded-md"
-            src="https://demo.phlox.pro/agency-aestry/wp-content/uploads/sites/279/2021/05/Customer-Image.png"
-            alt="Smiling customer portrait for testimonial"
-            loading="lazy"
-            width="768"
-            height="980"
-          />
-        </figure>
+      <section class="relative">
+  <div class="swiper testimonial-swiper">
+    <div class="swiper-wrapper">
 
-        <!-- Nội dung bên phải -->
-        <figure class="flex flex-col justify-center gap-12">
-          <blockquote class="max-w-[559px] text-slate-700 text-xl font-medium font-['Lexend'] leading-relaxed">
-            “These guys are incredible. They've helped us to grow our business and now the biggest problem we seem to come across is having too much business - which is the ideal problem to have.”
-          </blockquote>
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <!-- Body -->
+        <div class="w-full grid grid-cols-1 md:grid-cols-[24rem_1fr] gap-8">
+          <!-- Ảnh bên trái -->
+          <figure class="md:row-span-1">
+            <img
+              class="w-full max-w-96 md:max-w-none md:w-96 md:h-[490px] h-auto object-cover rounded-md"
+              src="https://demo.phlox.pro/agency-aestry/wp-content/uploads/sites/279/2021/05/Customer-Image.png"
+              alt="Smiling customer portrait for testimonial"
+              loading="lazy" width="768" height="980" />
+          </figure>
 
-          <figcaption>
-            <div class="text-yellow-400 text-3xl leading-7" aria-label="5 out of 5 stars" role="img">★★★★★</div>
-            <div class="mt-3 font-['Philosopher']">
-              <div class="text-slate-700/75 text-base font-bold capitalize">Hannah Montana</div>
-              <div class="text-slate-700/75 text-base tracking-wide">CEO — Productfund</div>
-            </div>
-          </figcaption>
-        </figure>
+          <!-- Nội dung bên phải -->
+          <figure class="flex flex-col justify-center gap-12">
+            <blockquote class="max-w-[559px] text-slate-700 text-xl font-medium font-['Lexend'] leading-relaxed">
+              “These guys are incredible. They've helped us to grow our business and now the biggest problem we seem to come across is having too much business - which is the ideal problem to have.”
+            </blockquote>
+
+            <figcaption>
+              <div class="text-yellow-400 text-3xl leading-7" aria-label="5 out of 5 stars" role="img">★★★★★</div>
+              <div class="mt-3 font-['Philosopher']">
+                <div class="text-slate-700/75 text-base font-bold capitalize">Hannah Montana</div>
+                <div class="text-slate-700/75 text-base tracking-wide">CEO — Productfund</div>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
       </div>
 
-      <!-- Dots -->
-      <nav class="mt-6 flex items-center justify-center gap-3" aria-label="Testimonial pagination">
-        <button type="button" class="inline-block w-3 h-3 bg-rose-500 rounded-full border border-white" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" class="inline-block w-3 h-3 bg-white rounded-full border border-gray-300" aria-label="Slide 2"></button>
-      </nav>
+      <!-- Slide 2 (ví dụ, copy để thêm slide) -->
+      <div class="swiper-slide">
+        <div class="w-full grid grid-cols-1 md:grid-cols-[24rem_1fr] gap-8">
+          <figure class="md:row-span-1">
+            <img
+              class="w-full max-w-96 md:max-w-none md:w-96 md:h-[490px] h-auto object-cover rounded-md"
+              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=768&auto=format&fit=crop"
+              alt="Happy client"
+              loading="lazy" />
+          </figure>
+
+          <figure class="flex flex-col justify-center gap-12">
+            <blockquote class="max-w-[559px] text-slate-700 text-xl font-medium font-['Lexend'] leading-relaxed">
+              “Service was fast, friendly and absolutely professional. We saw measurable growth within weeks.”
+            </blockquote>
+
+            <figcaption>
+              <div class="text-yellow-400 text-3xl leading-7" aria-label="5 out of 5 stars" role="img">★★★★★</div>
+              <div class="mt-3 font-['Philosopher']">
+                <div class="text-slate-700/75 text-base font-bold capitalize">Roy Hipper</div>
+                <div class="text-slate-700/75 text-base tracking-wide">Head of Growth — StartupX</div>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Pagination (dots) -->
+    <div class="swiper-pagination mt-6"></div>
+  </div>
+</section>
 
       <!-- Logo strip -->
       <?php
@@ -102,3 +135,18 @@
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.testimonial-swiper', {
+      slidesPerView: 1,
+      spaceBetween: 24,
+      loop: true,
+      autoHeight: true,
+      pagination: {
+        el: '.testimonial-swiper .swiper-pagination',
+        clickable: true,
+      },
+    });
+  });
+</script>

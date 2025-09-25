@@ -126,61 +126,61 @@ function vexa_register_cpts() {
 function vexa_register_taxonomies() {
 
 	// Portfolio Category (hierarchical)
-	register_taxonomy( 'portfolio_category', array( 'portfolio' ), array(
-		'labels' => array(
-			'name'              => __( 'Portfolio Categories', 'vexa' ),
-			'singular_name'     => __( 'Portfolio Category', 'vexa' ),
-			'menu_name'         => __( 'Portfolio Category', 'vexa' ),
-		),
-		'hierarchical'      => true,
-		'public'            => true,
-		'show_ui'           => true,
-		'show_admin_column' => true,
-		'show_in_rest'      => true,
-		'rewrite'           => array( 'slug' => 'portfolio-category', 'with_front' => true ),
-	) );
+	// register_taxonomy( 'portfolio_category', array( 'portfolio' ), array(
+	// 	'labels' => array(
+	// 		'name'              => __( 'Portfolio Categories', 'vexa' ),
+	// 		'singular_name'     => __( 'Portfolio Category', 'vexa' ),
+	// 		'menu_name'         => __( 'Portfolio Category', 'vexa' ),
+	// 	),
+	// 	'hierarchical'      => true,
+	// 	'public'            => true,
+	// 	'show_ui'           => true,
+	// 	'show_admin_column' => true,
+	// 	'show_in_rest'      => true,
+	// 	'rewrite'           => array( 'slug' => 'portfolio-category', 'with_front' => true ),
+	// ) );
 
-	// Industry (shared)
-	register_taxonomy( 'industry', array( 'portfolio', 'service', 'partner', 'ip_asset', 'post' ), array(
-		'labels' => array(
-			'name'          => __( 'Industries', 'vexa' ),
-			'singular_name' => __( 'Industry', 'vexa' ),
-		),
-		'hierarchical'      => true,
-		'public'            => true,
-		'show_ui'           => true,
-		'show_admin_column' => true,
-		'show_in_rest'      => true,
-		'rewrite'           => array( 'slug' => 'industry' ),
-	) );
+	// // Industry (shared)
+	// register_taxonomy( 'industry', array( 'portfolio', 'service', 'partner', 'ip_asset', 'post' ), array(
+	// 	'labels' => array(
+	// 		'name'          => __( 'Industries', 'vexa' ),
+	// 		'singular_name' => __( 'Industry', 'vexa' ),
+	// 	),
+	// 	'hierarchical'      => true,
+	// 	'public'            => true,
+	// 	'show_ui'           => true,
+	// 	'show_admin_column' => true,
+	// 	'show_in_rest'      => true,
+	// 	'rewrite'           => array( 'slug' => 'industry' ),
+	// ) );
 
-	// Audience (shared) – dùng như tag theo đối tượng (IP Owner, Brand, Factory)
-	register_taxonomy( 'audience', array( 'portfolio', 'service', 'ip_asset', 'post' ), array(
-		'labels' => array(
-			'name'          => __( 'Audiences', 'vexa' ),
-			'singular_name' => __( 'Audience', 'vexa' ),
-		),
-		'hierarchical'      => false,
-		'public'            => true,
-		'show_ui'           => true,
-		'show_admin_column' => true,
-		'show_in_rest'      => true,
-		'rewrite'           => array( 'slug' => 'audience' ),
-	) );
+	// // Audience (shared) – dùng như tag theo đối tượng (IP Owner, Brand, Factory)
+	// register_taxonomy( 'audience', array( 'portfolio', 'service', 'ip_asset', 'post' ), array(
+	// 	'labels' => array(
+	// 		'name'          => __( 'Audiences', 'vexa' ),
+	// 		'singular_name' => __( 'Audience', 'vexa' ),
+	// 	),
+	// 	'hierarchical'      => false,
+	// 	'public'            => true,
+	// 	'show_ui'           => true,
+	// 	'show_admin_column' => true,
+	// 	'show_in_rest'      => true,
+	// 	'rewrite'           => array( 'slug' => 'audience' ),
+	// ) );
 
-	// Service Used (shared) – gắn vào Portfolio/Posts/Services để lọc “dự án theo dịch vụ”
-	register_taxonomy( 'service_used', array( 'portfolio', 'service', 'post' ), array(
-		'labels' => array(
-			'name'          => __( 'Service Used', 'vexa' ),
-			'singular_name' => __( 'Service Used', 'vexa' ),
-		),
-		'hierarchical'      => false,
-		'public'            => true,
-		'show_ui'           => true,
-		'show_admin_column' => true,
-		'show_in_rest'      => true,
-		'rewrite'           => array( 'slug' => 'service-used' ),
-	) );
+	// // Service Used (shared) – gắn vào Portfolio/Posts/Services để lọc “dự án theo dịch vụ”
+	// register_taxonomy( 'service_used', array( 'portfolio', 'service', 'post' ), array(
+	// 	'labels' => array(
+	// 		'name'          => __( 'Service Used', 'vexa' ),
+	// 		'singular_name' => __( 'Service Used', 'vexa' ),
+	// 	),
+	// 	'hierarchical'      => false,
+	// 	'public'            => true,
+	// 	'show_ui'           => true,
+	// 	'show_admin_column' => true,
+	// 	'show_in_rest'      => true,
+	// 	'rewrite'           => array( 'slug' => 'service-used' ),
+	// ) );
 }
 
 /**

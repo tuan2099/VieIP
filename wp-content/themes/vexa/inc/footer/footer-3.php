@@ -9,7 +9,7 @@
   <!-- ẢNH TRANG TRÍ: ở ngoài card -->
   <img
     src="https://demo.phlox.pro/agency-aestry/wp-content/uploads/sites/279/2021/09/3D_Shape-1.svg"
-    class="absolute left-14 -top-14 w-24 rotate-[60deg] drop-shadow-[0_12px_24px_rgba(0,0,0,.35)] pointer-events-none z-20"
+    class="absolute left-14 -top-[100px] lg:-top-14 w-24 rotate-[60deg] drop-shadow-[0_12px_24px_rgba(0,0,0,.35)] pointer-events-none z-20"
     alt=""
     loading="lazy"
     width="96"

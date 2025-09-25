@@ -6,7 +6,7 @@ $title        = $services['title']        ?? '';
 ?>
 
 <section class="py-20">
-  <div class="container mx-auto px-4 md:px-6 max-w-[1440px]">
+  <div class="container mx-auto px-6 md:px-6 max-w-[1440px]">
     <!-- Section Header -->
     <header class="mb-12">
       <p
@@ -15,7 +15,7 @@ $title        = $services['title']        ?? '';
         <?php echo esc_html( $sub_title ); ?>
       </p>
       <h1 class="font-['Philosopher'] mt-3 text-3xl md:text-4xl font-bold leading-tight relative">
-        <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[1%] -top-[15%]"></div>
+        <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[5%] lg:-left-[1%] -top-[15%]"></div>
         <span
           class=""
         >

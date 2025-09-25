@@ -12,7 +12,7 @@ $button_link = isset($sec['button_link']) ? $sec['button_link'] : '';
 
 
 <section class="py-20">
-    <div class="container mx-auto px-4 md:px-6 max-w-[1440px]">
+    <div class="container mx-auto px-6 md:px-6 max-w-[1440px]">
         <div class="">
             <!-- Team Members -->
             <div>
@@ -24,7 +24,7 @@ $button_link = isset($sec['button_link']) ? $sec['button_link'] : '';
                         <?php echo esc_html($subtitle); ?>
                         </p>
                         <h1 class="mt-3 text-3xl md:text-4xl font-bold leading-tight relative">
-                        <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[5%] -top-[15%]"></div>
+                        <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[5%] lg:-top-[7%] -top-[20%]"></div>
                         <span
                             class="font-['Philosopher']"
                         >
@@ -54,13 +54,18 @@ $button_link = isset($sec['button_link']) ? $sec['button_link'] : '';
                                 $photo = get_field('photo'); 
                                 $thumb_id = is_array($photo) ? ($photo['ID'] ?? 0) : $photo;
                             }
-                            $img_html = $thumb_id
-                                ? wp_get_attachment_image($thumb_id, 'large', false, [
-                                    'class'  => 'w-full h-56 md:h-96 object-cover',
-                                    'alt'    => esc_attr(get_the_title()),
-                                    'loading'=> 'lazy',
-                                ])
-                                : '<div class="w-full h-56 md:h-96 bg-slate-200"></div>';
+                            if ($thumb_id) {
+                                $img_html = wp_get_attachment_image($thumb_id, 'large', false, [
+                                'class'   => 'w-full h-56 md:h-96 object-cover',
+                                'alt'     => esc_attr(get_the_title()),
+                                'loading' => 'lazy',
+                                ]);
+                            } else {
+                                $seed     = get_the_ID();
+                                $fallback = 'https://picsum.photos/seed/' . $seed . '/600/345';
+                                $img_html = '<img src="' . esc_url($fallback) . '" alt="' . esc_attr(get_the_title()) .
+                                            '" class="w-full h-56 md:h-96 object-cover" loading="lazy">';
+                            }
 
                             // ACF fields
                             $position = function_exists('get_field') ? (get_field('position') ?: '') : '';

@@ -6,7 +6,7 @@
                 bg-[#1a1a22] rounded-l-3xl -z-10"></div>
 
     <!-- Nội dung (không để bg ở đây nữa) -->
-    <div class="relative grid gap-12 lg:grid-cols-5 items-center pt-[140px]">
+    <div class="relative grid grid-cols-1  gap-12 lg:grid-cols-5 items-center pt-[140px]">
       <!-- Left Image -->
       <div class="flex justify-center col-span-2">
         <img
@@ -39,62 +39,88 @@
         </div>
 
         <!-- Grid ảnh -->
-        <div class="relative lg:mr-[calc(50%-50vw)] lg:pr-4 overflow-visible">
+        <?php
+          // --------- Cấu hình ----------
+          $post_type   = 'portfolio'; 
+          $per_page    = 8;
+          $cat_slug    = '';            
+          $taxonomy    = 'portfolio_cat';
+          $loop        = true;
+          $autoplay    = true;
 
-            <!-- Swiper -->
-            <div class="portfolio-swiper swiper">
+          $slider_id = 'portfolio-swiper-' . uniqid();
+
+          // WP_Query
+          $args = [
+            'post_type'      => $post_type,
+            'posts_per_page' => $per_page,
+            'post_status'    => 'publish',
+            'orderby'        => 'date',
+            'order'          => 'DESC',
+          ];
+
+          if (!empty($cat_slug)) {
+            $args['tax_query'] = [[
+              'taxonomy' => $taxonomy,
+              'field'    => 'slug',
+              'terms'    => sanitize_title($cat_slug),
+            ]];
+          }
+
+          $q = new WP_Query($args);
+          if ($q->have_posts()) : ?>
+            <div class="relative lg:mr-[calc(50%-50vw)] lg:pr-4 overflow-visible">
+              <div id="<?php echo esc_attr($slider_id); ?>"
+                  class="portfolio-swiper swiper" >
                 <div class="swiper-wrapper">
-                <!-- Slide 1 -->
-                <div class="swiper-slide">
-                    <article class="overflow-hidden rounded-2xl">
-                    <img src="https://picsum.photos/600/400?random=42"
-                        alt=""
-                        class="w-full h-80 object-cover" />
-                    </article>
-                </div>
+                  <?php while ($q->have_posts()) : $q->the_post(); ?>
+                    <div class="swiper-slide">
+                      <article class="relative overflow-hidden rounded-2xl group">
+                        <!-- Ảnh -->
+                        <?php
+                        if (has_post_thumbnail()) {
+                          the_post_thumbnail('large', [
+                            'class'   => 'lg:w-full h-[25rem] object-cover transform-gpu will-change-transform transition-transform duration-500 ease-out group-hover:scale-105',
+                            'loading' => 'lazy',
+                            'alt'     => esc_attr(get_the_title()),
+                          ]);
+                        } else {
+                          echo '<img src="https://picsum.photos/600/400?random=' . esc_attr(get_the_ID()) .
+                              '" class="lg:w-full h-[25rem] object-cover transform-gpu will-change-transform transition-transform duration-500 ease-out group-hover:scale-105" alt="">';
+                        }
+                        ?>
 
-                <!-- Slide 2 -->
-                <div class="swiper-slide">
-                    <article class="overflow-hidden rounded-2xl">
-                    <img src="https://picsum.photos/600/400?random=43"
-                        alt=""
-                        class="w-full h-80 object-cover" />
-                    </article>
-                </div>
+                        <!-- Overlay đỏ + info -->
+                        <div
+                          class="pointer-events-none absolute inset-0 
+                                bg-gradient-to-t from-red-600/80 to-transparent
+                                opacity-0 transition-opacity duration-500 ease-out
+                                group-hover:opacity-100">
+                        </div>
 
-                <!-- Slide 3 -->
-                <div class="swiper-slide">
-                    <article class="overflow-hidden rounded-2xl">
-                    <img src="https://picsum.photos/600/400?random=44"
-                        alt=""
-                        class="w-full h-80 object-cover" />
-                    </article>
+                        <!-- Text (title + meta) trượt lên -->
+                        <div class="absolute inset-x-0 bottom-0 p-6 text-white 
+                                    flex flex-col justify-end">
+                          <div class="transform-gpu translate-y-6 opacity-0
+                                      transition-all duration-500 ease-out
+                                      group-hover:translate-y-0 group-hover:opacity-100">
+                            <h3 class="font-semibold text-lg">
+                              <a href="<?php the_permalink(); ?>" class="hover:underline font-['Philosopher']"><?php the_title(); ?></a>
+                            </h3>
+                            <?php if ($position ?? null): ?>
+                              <p class="text-sm/relaxed opacity-90"><?php echo esc_html($position); ?></p>
+                            <?php endif; ?>
+                          </div>
+                        </div>
+                      </article>
+                    </div>
+                  <?php endwhile; wp_reset_postdata(); ?>
+                  <div class="swiper-slide hidden lg:block"></div>
                 </div>
-
-                <!-- Slide 4 -->
-                <div class="swiper-slide">
-                    <article class="overflow-hidden rounded-2xl">
-                    <img src="https://picsum.photos/600/400?random=45"
-                        alt=""
-                        class="w-full h-80 object-cover" />
-                    </article>
-                </div>
-
-                <div class="swiper-slide">
-                    <article class="overflow-hidden rounded-2xl">
-                    <img src="https://picsum.photos/600/400?random=45"
-                        alt=""
-                        class="w-full h-80 object-cover" />
-                    </article>
-                </div>
-
-                <div class="swiper-slide">
-                    <article class="overflow-hidden rounded-2xl">
-                    </article>
-                </div>
-                </div>
+              </div>
             </div>
-        </div>
+          <?php endif; ?>
+
       </div>
     </div>
 
@@ -105,30 +131,27 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    new Swiper('.portfolio-swiper', {
-      spaceBetween: 24,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
+  new Swiper('.portfolio-swiper', {
+    slidesPerView: 1,      // <-- mặc định cho mobile
+    spaceBetween: 16,
+    autoHeight: true,      // giữ chiều cao theo nội dung (mobile rất cần)
+    grabCursor: true,
+    watchOverflow: true,
+    breakpoints: {
+        0: {
+          // mobile
+          slidesPerView: 1,
+        },
+        640: {
+          // tablet
+          slidesPerView: 1.5,
+        },
+        1024: {
+          // desktop
+          slidesPerView: 2.2,
+        },
       },
-      slidesPerView: 3,
-      breakpoints: {
-        // 640:  { slidesPerView: 1.6, spaceBetween: 24 },
-        // 768:  { slidesPerView: 2.0, spaceBetween: 24 },
-        // 1024: { slidesPerView: 2.6, spaceBetween: 28 },
-        // 1280: { slidesPerView: 3.2, spaceBetween: 28 }
-      },
-      // điều hướng
-      navigation: {
-        nextEl: '.portfolio-next',
-        prevEl: '.portfolio-prev',
-      },
-      pagination: {
-        el: '.portfolio-pagination',
-        clickable: true,
-      },
-      grabCursor: true,
-      watchOverflow: true
-    });
   });
+});
+
 </script>

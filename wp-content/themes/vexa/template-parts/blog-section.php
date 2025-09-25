@@ -8,8 +8,8 @@ $title        = $blog['title']        ?? '';
 $button_title = $blog['button_title'] ?? '';
 $button_link  = $blog['button_link']  ?? '';
 ?>
-<section class="py-16">
-    <div class="container mx-auto px-4 md:px-6 max-w-[1440px]">
+<section class="py-16 mt-[10%]">
+    <div class="container mx-auto px-6 md:px-6 max-w-[1440px]">
         <!-- Section Header -->
         <header class="flex flex-col md:flex-row md:items-center md:justify-between mb-12" >
             <div>
@@ -17,7 +17,7 @@ $button_link  = $blog['button_link']  ?? '';
                 <?php echo esc_html( $sub_title ); ?>
                 </p>
                 <h2 class="mt-2 text-3xl md:text-[40px] font-bold leading-tight relative font-['Philosopher']">
-                <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[8%] -top-[7%] "></div>
+                <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[5%] lg:-top-[7%] -top-[25%]"></div>
                 <span class="font-['Philosopher']"><?php echo esc_html( $title ); ?></span>
                 </h2>
             </div>
@@ -53,7 +53,7 @@ $button_link  = $blog['button_link']  ?? '';
                                 'loading' => 'lazy'
                             ]); ?>
                         <?php else : ?>
-                            <img src="https://picsum.photos/600/400" alt="<?php the_title(); ?>" class="w-full object-cover" loading="lazy" />
+                            <img src="https://picsum.photos/600/345" alt="<?php the_title(); ?>" class="w-full object-cover" loading="lazy" />
                         <?php endif; ?>
                     </a>
                     <div class="mt-4 flex flex-col flex-1">

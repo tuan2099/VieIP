@@ -6,8 +6,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <?php wp_head(); ?>
 </head>
 <style>
@@ -18,15 +18,15 @@
 
     .custom_blur {
       background-image: linear-gradient(227deg, #06969724 3%, #ae634717 51%, #ff003726 97%);
-    background-blend-mode: normal;
-    --f2w-order: 0;
-    filter: blur(25px);
-    border-radius: 542.8px;
-    width: 1509px;
-    height: 1002px;
-    position: absolute;
-    top: 0;
-    left: -72px;
+      background-blend-mode: normal;
+      --f2w-order: 0;
+      filter: blur(25px);
+      border-radius: 542.8px;
+      width: 1509px;
+      height: 1002px;
+      position: absolute;
+      top: 0;
+      left: -72px;
     }
 
     .custom_bg_text {
