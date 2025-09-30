@@ -7,17 +7,17 @@
 
 get_header();
 ?>
-<section class="py-20 relative" style="background: url('<?php echo get_template_directory_uri(); ?>/assets/images/backgound-head.svg'); background-position: bottom; background-size: cover;
+<section class="py-20 relative " style="background: url('<?php echo get_template_directory_uri(); ?>/assets/images/backgound-head.svg'); background-position: bottom; background-size: cover;
     background-repeat: no-repeat;">
     <div class="container mx-auto px-4 md:px-6 max-w-[1440px]">
         <h1 class="text-[65px] text-white font-['Philosopher']"><?php the_title(); ?></h1>
         <div class="font-['Lexend']"><?php vexa_breadcrumbs(); ?></div>
     </div>
-    <div class="custom_blur -z-10"></div>
+    <div class="custom_blur -z-10 w-full"></div>
 </section>
 
 <!-- Content -->
-<div class="container mx-auto px-4 md:px-6 max-w-[1440px] py-12 mb-64">
+<div class="container mx-auto px-4 md:px-6 max-w-[1440px] py-12 mb-64 ">
     <?php
         $q = new WP_Query([
         'post_type'           => 'post',
@@ -50,7 +50,7 @@ get_header();
         ?>
 
         <section class="relative overflow-hidden">
-            <div class="px-10 md:px-0 py-20 md:py-28">
+            <div class="md:px-0 py-20 md:py-28">
                 <div class="relative">
 
                 <!-- Ảnh lớn -->
@@ -65,7 +65,7 @@ get_header();
                     <div class="rounded-[28px] md:rounded-[32px] p-8 md:p-12 text-white
                                 bg-[radial-gradient(120%_120%_at_0%_0%,#13b38b_0%,#e94b35_70%,#e63b7a_100%)]
                                 shadow-xl">
-                    <h2 class="text-3xl md:text-[42px] font-semibold leading-tight font-['Philosopher']">
+                    <h2 class="text-3xl md:text-[42px] font-medium leading-tight font-['Philosopher']">
                         <a href="<?php echo esc_url($permalink); ?>" class="hover:opacity-90">
                         <?php echo esc_html($title); ?>
                         </a>
@@ -124,7 +124,7 @@ get_header();
                             <img
                                 src="<?php echo esc_url($img); ?>"
                                 alt="<?php echo esc_attr(get_the_title()); ?>"
-                                class="w-full h-72 md:h-[420px] object-cover" />
+                                class="w-full h-72 md:h-[350px] object-cover" />
                             </a>
                         </figure>
 
@@ -134,7 +134,7 @@ get_header();
                             By Posted On: <?php echo esc_html( get_the_author() ); ?>
                             </p>
 
-                            <h2 class="mt-3 text-3xl md:text-[30px] font-semibold leading-tight">
+                            <h2 class="mt-3 text-3xl md:text-[30px] font-medium leading-tight">
                                 <a href="<?php the_permalink(); ?>" class="hover:underline hover:text-[#D35135] transition font-['Philosopher']">
                                     <?php the_title(); ?>
                                 </a>
@@ -166,6 +166,7 @@ get_header();
 
         <aside class="lg:col-span-1">
             <img class="w-full object-cover" src="https://demo.phlox.pro/agency-aestry/wp-content/uploads/sites/279/2021/05/336-x-280-ad.jpg"/>
+            <h2 class="text-3xl md:text-[42px] font-medium leading-tight font-['Philosopher'] mt-4">Recent Posts</h2>
             <section class="max-w-6xl mx-auto py-12">
                 <div class="">
                     <?php
@@ -196,7 +197,7 @@ get_header();
                         </a>
 
                         <div class="p-6 md:p-7">
-                            <h3 class="text-xl md:text-2xl font-semibold leading-snug">
+                            <h3 class="text-xl md:text-2xl font-medium leading-snug">
                                 <a href="<?php the_permalink(); ?>" class="text-white hover:underline hover:text-[#D35135] transition font-['Philosopher']">
                                     <?php the_title(); ?>
                                 </a>

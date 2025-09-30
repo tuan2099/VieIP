@@ -148,7 +148,7 @@
         },
         1024: {
           // desktop
-          slidesPerView: 2.2,
+          slidesPerView: 3,
         },
       },
   });
