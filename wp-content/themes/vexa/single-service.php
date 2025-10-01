@@ -18,6 +18,13 @@ get_header();?>
   <?php endif; ?>
 </section>
 
+<div class="text-center">
+    <h1 class="mt-2 text-3xl md:text-[40px] font-bold leading-tight relative font-['Philosopher']">
+        <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[5%] lg:-top-[7%] -top-[25%]"></div>
+        Get In Touch
+    </h1>
+</div>
+
 <!-- Content -->
 <div class="container mx-auto px-4 md:px-6 max-w-[1440px] py-12">
   <?php the_content(); ?>

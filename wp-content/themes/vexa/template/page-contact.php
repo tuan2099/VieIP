@@ -1,4 +1,9 @@
-<?php 
+<?php
+global $vexatheme_option;
+$preloader_img = get_template_directory_uri().'/assets/img/loading-1.svg' ;
+?>
+
+<?php
 
 /**
  * Template name: Contact
@@ -18,97 +23,71 @@ get_header();
 </section>
 
 
-  <!-- nền gradient tối -->
-  <div class="pointer-events-none fixed inset-0 -z-10">
-    <div class="absolute -left-40 -top-40 h-96 w-96 rounded-full blur-3xl opacity-30"
-         style="background: radial-gradient(60% 60% at 50% 50%, #ff5a6a 0%, #6b7cff 60%, transparent 70%);"></div>
-    <div class="absolute right-0 top-20 h-96 w-96 rounded-full blur-3xl opacity-20"
-         style="background: radial-gradient(60% 60% at 50% 50%, #00f8b4 0%, #6b7cff 60%, transparent 70%);"></div>
+<!-- nền gradient tối -->
+<div class="pointer-events-none fixed inset-0 -z-10">
+<div class="absolute -left-40 -top-40 h-96 w-96 rounded-full blur-3xl opacity-30"
+     style="background: radial-gradient(60% 60% at 50% 50%, #ff5a6a 0%, #6b7cff 60%, transparent 70%);"></div>
+<div class="absolute right-0 top-20 h-96 w-96 rounded-full blur-3xl opacity-20"
+     style="background: radial-gradient(60% 60% at 50% 50%, #00f8b4 0%, #6b7cff 60%, transparent 70%);"></div>
+</div>
+
+<!-- Header -->
+<div class="my-8 flex items-center gap-4 max-w-[1440px] m-auto p-5 lg:p-0">
+    <h1 class="mt-2 text-3xl md:text-[40px] font-bold leading-tight relative font-['Philosopher']">
+        <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[5%] lg:-top-[7%] -top-[25%]"></div>
+        Get In Touch
+    </h1>
+</div>
+
+<!-- Grid -->
+<section class="grid gap-10 lg:grid-cols-2 max-w-[1440px] m-auto mb-12 lg:mb-28  p-5 lg:p-0">
+    <!-- LEFT: FORM CARD -->
+    <div class="relative">
+    <span class="absolute -left-4 top-1/3 z-10 grid h-7 w-7 place-items-center rounded-full">
+      <span class="absolute inline-block h-7 w-7 rounded-full ring-2 ring-emerald-300"></span>
+      <span class="absolute inline-block h-3 w-3 rounded-full bg-emerald-300 blur-[1px]"></span>
+    </span>
+
+    <div class="rounded-2xl bg-[#15161c] p-8 shadow-2xl ring-1 ring-white/10 sm:p-12">
+          <form class="space-y-6">
+                <!-- Name -->
+                <label class="block">
+                    <input type="text" placeholder="Your Name"
+                         class="w-full rounded-full border border-white/20 bg-[#0f1016] px-6 py-4 text-base text-white/90 placeholder-white/40 outline-none focus:border-white/30 border-[3px]" />
+                </label>
+                <!-- Subject -->
+                <label class="block">
+                    <input type="text" placeholder="Subject"
+                         class="w-full rounded-full border border-white/20 bg-[#0f1016] px-6 py-4 text-base text-white/90 placeholder-white/40 outline-none focus:border-white/30 border-[3px]" />
+                </label>
+                <!-- Email -->
+                <label class="block">
+                    <input type="email" placeholder="Email"
+                         class="w-full rounded-full border border-white/20 bg-[#0f1016] px-6 py-4 text-base text-white/90 placeholder-white/40 outline-none focus:border-white/30 border-[3px]" />
+                </label>
+                <!-- Body -->
+                <label class="block">
+                    <textarea rows="8" placeholder="Body"
+                            class="w-full resize-y rounded-3xl border border-white/20 bg-[#0f1016] px-6 py-4 text-base text-white/90 placeholder-white/40 outline-none focus:border-white/30 border-[3px]"></textarea>
+                </label>
+                <button class="font-['Lexend'] w-full lg:w-auto lg:w-none text-center inline-block bg-[#552ae0] rounded-full border-2 border-[#552ae0] px-12 py-3 text-[16px] font-medium text-purple-200 hover:bg-[#552ae0] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#552ae0]" aria-label="Contact us" >
+                    Contact Us
+                </button>
+          </form>
+    </div>
   </div>
 
-    <!-- Header -->
-    <div class="mb-8 flex items-center gap-4">
-      <div class="grid h-12 w-12 place-items-center rounded-full shadow-lg"
-           style="background: radial-gradient(120% 120% at 20% 20%, #ff935c 10%, #ff5a6a 40%, #6b7cff 100%);">
-        <span class="sr-only">Logo</span>
-      </div>
-      <h1 class="text-4xl font-semibold tracking-tight text-white">Get In Touch</h1>
-    </div>
-
-    <!-- Grid -->
-    <section class="grid gap-10 lg:grid-cols-2">
-      <!-- LEFT: FORM CARD -->
-      <div class="relative">
-        <!-- chấm neon bên mép trái -->
-        <span class="absolute -left-4 top-1/3 z-10 grid h-7 w-7 place-items-center rounded-full">
-          <span class="absolute inline-block h-7 w-7 rounded-full ring-2 ring-emerald-300"></span>
-          <span class="absolute inline-block h-3 w-3 rounded-full bg-emerald-300 blur-[1px]"></span>
-        </span>
-
-        <div class="rounded-2xl bg-[#15161c] p-8 shadow-2xl ring-1 ring-white/10 sm:p-10">
-          <form class="space-y-6">
-            <!-- Name -->
-            <label class="block">
-              <input type="text" placeholder="Your Name"
-                     class="w-full rounded-full border border-white/10 bg-[#0f1016] px-6 py-4 text-base text-white/90 placeholder-white/40 outline-none focus:border-white/30" />
-            </label>
-            <!-- Subject -->
-            <label class="block">
-              <input type="text" placeholder="Subject"
-                     class="w-full rounded-full border border-white/10 bg-[#0f1016] px-6 py-4 text-base text-white/90 placeholder-white/40 outline-none focus:border-white/30" />
-            </label>
-            <!-- Email -->
-            <label class="block">
-              <input type="email" placeholder="Email"
-                     class="w-full rounded-full border border-white/10 bg-[#0f1016] px-6 py-4 text-base text-white/90 placeholder-white/40 outline-none focus:border-white/30" />
-            </label>
-            <!-- Body -->
-            <label class="block">
-              <textarea rows="6" placeholder="Body"
-                        class="w-full resize-y rounded-3xl border border-white/10 bg-[#0f1016] px-6 py-4 text-base text-white/90 placeholder-white/40 outline-none focus:border-white/30"></textarea>
-            </label>
-
-            <button type="submit"
-                    class="mt-2 inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-semibold text-white shadow-lg transition hover:opacity-95"
-                    style="background: linear-gradient(90deg, #6b3bff 0%, #6f51ff 40%, #7a5cff 100%);">
-              Send Message
-            </button>
-          </form>
-        </div>
-      </div>
-
-      <!-- RIGHT: IMAGE -->
-      <div class="relative">
-        <!-- chữ J 3D giả lập -->
-        <div class="absolute left-1/3 -top-8 h-24 w-24 rotate-6 blur-[0.2px]"
-             style="background:
-               conic-gradient(from 120deg, #ff935c 0 25%, #ff5a6a 25% 55%, #6b7cff 55% 100%);
-               -webkit-mask:
-               radial-gradient(closest-side, transparent 66%, black 67%) top left,
-               radial-gradient(closest-side, transparent 66%, black 67%) bottom left;
-               -webkit-mask-size: 100% 50%;
-               -webkit-mask-repeat: no-repeat;"></div>
-
-        <div class="overflow-hidden rounded-[3rem] ring-1 ring-white/10">
-          <!-- khung tỉ lệ -->
-          <div class="relative aspect-[5/4] bg-black">
-            <!-- lớp ảnh + overlay màu -->
-            <img
-              class="absolute inset-0 h-full w-full object-cover opacity-90"
-              src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1600&auto=format&fit=crop"
-              alt="Support agent" />
-            <div class="absolute inset-0 mix-blend-overlay opacity-90"
-                 style="background: linear-gradient(45deg, #6b7cff 0%, #00e3b9 35%, #ff5a6a 75%, #ff9f6b 100%);"></div>
-
-            <!-- bo góc kiểu blob bằng mask -->
-            <div class="absolute inset-0 blob-mask"></div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- RIGHT: IMAGE -->
+  <div class="">
+        <img
+          class="inset-0 h-full w-full object-cover opacity-90"
+          src="https://demo.phlox.pro/agency-aestry/wp-content/uploads/sites/279/2021/05/Contact-Image.png"
+          alt="Support agent" />
+  </div>
+</section>
 
 
-<div class="grid items-start gap-12 lg:grid-cols-[1.1fr_.9fr]  max-w-[1440px] mx-auto">
+<div class="grid items-start gap-12 lg:grid-cols-[1.1fr_.9fr] mb-32 lg:mb-64 max-w-[1440px] p-5 lg:p-0 mx-auto">
       <!-- MAP CARD -->
       <div class="relative rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl">
         <!-- Dark map (grayscale + dim) -->
@@ -137,19 +116,16 @@ get_header();
       <section class="pt-2">
         <!-- Title -->
         <div class="mb-8 flex items-center gap-4">
-          <div class="grid place-items-center h-14 w-14 rounded-full shadow-lg"
-               style="background: radial-gradient(120% 120% at 20% 20%, #ff935c 10%, #ff5a6a 40%, #6b7cff 100%);">
-            <span class="sr-only">Logo</span>
-          </div>
-          <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
-            Fashion Photoshoot
-          </h1>
+            <h1 class="mt-2 text-3xl md:text-[40px] font-bold leading-tight relative font-['Philosopher']">
+                <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[5%] lg:-top-[7%] -top-[25%]"></div>
+                Fashion Photoshoot
+            </h1>
         </div>
 
         <!-- Contact rows -->
         <ul class="space-y-8">
           <!-- Address -->
-          <li class="flex items-start gap-4">
+          <li class="flex items-center gap-4">
             <div class="mt-0.5 grid place-items-center h-11 w-11 rounded-xl bg-white/5 ring-1 ring-white/10">
               <!-- location icon -->
               <svg class="h-6 w-6 text-white/80" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -158,13 +134,13 @@ get_header();
             </div>
             <div>
               <p class="text-base/7 text-white/90">
-                657 5th Ave, New York, NY 10075
+                  <?php echo esc_html($vexatheme_option['location']); ?>
               </p>
             </div>
           </li>
 
           <!-- Email -->
-          <li class="flex items-start gap-4">
+          <li class="flex items-center gap-4">
             <div class="mt-0.5 grid place-items-center h-11 w-11 rounded-xl bg-white/5 ring-1 ring-white/10">
               <!-- mail icon -->
               <svg class="h-6 w-6 text-white/80" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -172,21 +148,21 @@ get_header();
               </svg>
             </div>
             <div class="space-x-2">
-              <a href="mailto:info@plox.com" class="text-white/90 hover:text-white underline decoration-white/20 hover:decoration-white">info@plox.com</a>
+              <a href="mailto:info@plox.com" class="text-white/90 hover:text-white underline decoration-white/20 hover:decoration-white"><?php echo esc_html($vexatheme_option['email']); ?></a>
               <span class="text-white/40">|</span>
               <a href="mailto:support@plox.com" class="text-white/90 hover:text-white underline decoration-white/20 hover:decoration-white">support@plox.com</a>
             </div>
           </li>
 
           <!-- Phone -->
-          <li class="flex items-start gap-4">
+          <li class="flex items-center gap-4">
             <div class="mt-0.5 grid place-items-center h-11 w-11 rounded-xl bg-white/5 ring-1 ring-white/10">
               <!-- phone icon -->
               <svg class="h-6 w-6 text-white/80" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1.5 1.5 0 0 1 1.6-.35c1.13.45 2.36.7 3.6.7a1.4 1.4 0 0 1 1.4 1.4V20a2 2 0 0 1-2 2C9.61 22 2 14.39 2 4a2 2 0 0 1 2-2h2.25A1.4 1.4 0 0 1 7.65 3.4c0 1.24.24 2.47.7 3.6a1.5 1.5 0 0 1-.35 1.6L6.6 10.8Z"/>
               </svg>
             </div>
-            <a href="tel:+16464442106" class="text-white/90 hover:text-white">+1 646-444-2106</a>
+            <a href="tel:+16464442106" class="text-white/90 hover:text-white"><?php echo esc_html($vexatheme_option['telphone']); ?></a>
           </li>
         </ul>
       </section>
