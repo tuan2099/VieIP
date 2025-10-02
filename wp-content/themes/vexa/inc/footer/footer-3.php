@@ -198,7 +198,7 @@
 </footer>
 
 <!-- FOOTER BOTTOM -->
-<div class="max-w-[1440px] mx-auto px-6 sm:px-9 bg-black" role="contentinfo">
+<div class="px-6 sm:px-9 bg-black" role="contentinfo">
     <div class="max-w-[1440px] mx-auto">
         <div class="py-5 text-slate-300 text-xs sm:text-sm text-center">
           <?php echo wp_kses_post($vexatheme_option['_copyright']); ?>
