@@ -76,29 +76,7 @@ function vexa_register_cpts() {
 		'map_meta_cap'       => true,
 	) );
 
-	// 4) PARTNERS
-	register_post_type( 'partner', array(
-		'labels' => array(
-			'name'          => __( 'Partners', 'vexa' ),
-			'singular_name' => __( 'Partner', 'vexa' ),
-			'menu_name'     => __( 'Partners', 'vexa' ),
-		),
-		'public'             => true,
-		'show_ui'            => true,
-		'show_in_menu'       => true,
-		'show_in_rest'       => true,
-		'has_archive'        => true,
-		'hierarchical'       => false,
-		'supports'           => array( 'title', 'thumbnail', 'editor', 'excerpt', 'revisions' ),
-		'taxonomies'         => array( 'industry' ),
-		'rewrite'            => array( 'slug' => 'partners', 'with_front' => true ),
-		'menu_icon'          => 'dashicons-handshake',
-		'capability_type'    => 'post',
-		'map_meta_cap'       => true,
-	) );
-
-	// 5) IP ASSETS (IP Store)
-	//  - Nếu sau dùng WooCommerce để bán, có thể tắt CPT này và dùng 'product'.
+	// 4) IP ASSETS (IP Store)
 	register_post_type( 'ip_asset', array(
 		'labels' => array(
 			'name'          => __( 'IP Assets', 'vexa' ),
