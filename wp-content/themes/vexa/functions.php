@@ -25,9 +25,18 @@ function vexatheme_scripts()
 {
     wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/font-awsome/all.min.css', array(), '6.4');
     wp_enqueue_script('font-awesome', get_template_directory_uri() . '/assets/font-awsome/all.min.js', array(), '6.4');
-
-
     wp_enqueue_script('tailwindcss', 'https://cdn.tailwindcss.com', array(), null, false);
+    // Google Fonts
+    wp_enqueue_style('google-fonts-philosopher', 'https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap', [], null);
+    wp_enqueue_style('google-fonts-lexend', 'https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap', [], null);
+
+    // Swiper
+    wp_enqueue_style('swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', [], '11');
+    wp_enqueue_script('swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', [], '11', true);
+
+    // AOS
+    wp_enqueue_style('aos', 'https://unpkg.com/aos@2.3.1/dist/aos.css', [], '2.3.1');
+    wp_enqueue_script('aos', 'https://unpkg.com/aos@2.3.1/dist/aos.js', [], '2.3.1', true);
 }
 
 add_action('wp_enqueue_scripts', 'vexatheme_scripts');
