@@ -8,20 +8,23 @@ $title = $blog['title'] ?? '';
 $button_title = $blog['button_title'] ?? '';
 $button_link = $blog['button_link'] ?? '';
 ?>
-<section class="py-16 mt-[10%]">
+<section class="py-16 mt-[10%]" data-aos="fade-up" data-aos-duration="700" data-aos-once="true">
     <div class="container mx-auto px-6 md:px-6 max-w-[1440px]">
         <!-- Section Header -->
         <header class="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
             <div>
-                <p class="text-sm font-semibold text-[#E43256] tracking-wide font-['Lexend']">
+                <p class="text-sm font-semibold text-[#E43256] tracking-wide font-['Lexend']"
+                   data-aos="fade-down" data-aos-duration="600" data-aos-once="true">
                     <?php echo esc_html($sub_title); ?>
                 </p>
-                <h2 class="mt-2 text-3xl md:text-[40px] font-bold leading-tight relative font-['Philosopher']">
-                    <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[5%] lg:-top-[7%] -top-[25%]"></div>
+                <h2 class="mt-2 text-3xl md:text-[40px] font-bold leading-tight relative font-['Philosopher']"
+                    data-aos="fade-up" data-aos-delay="100" data-aos-duration="700" data-aos-once="true">
+                    <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[5%] lg:-top-[7%] -top-[25%]"
+                         data-aos="zoom-in" data-aos-delay="150" data-aos-duration="500" data-aos-once="true"></div>
                     <span class="font-['Philosopher']"><?php echo esc_html($title); ?></span>
                 </h2>
             </div>
-            <div class="mt-6 md:mt-0">
+            <div class="mt-6 md:mt-0" data-aos="fade-left" data-aos-delay="150" data-aos-duration="650" data-aos-once="true">
                 <a
                         href="<?php echo $button_link ? esc_url($button_link) : '#'; ?>"
                         class="font-['Lexend'] inline-block rounded-full border-2 border-[#552ae0] px-8 py-3 text-[16px] font-medium text-purple-200 hover:bg-[#552ae0] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
@@ -45,30 +48,38 @@ $button_link = $blog['button_link'] ?? '';
                 while ($query->have_posts()) : $query->the_post();
                     ?>
                     <!-- Post Card -->
-                    <article class="flex flex-col">
+                    <article class="flex flex-col"
+                             data-aos="fade-up"
+                             data-aos-duration="700"
+                             data-aos-once="true">
                         <a href="<?php the_permalink(); ?>" class="block overflow-hidden rounded-2xl">
                             <?php if (has_post_thumbnail()) : ?>
                                 <?php the_post_thumbnail('medium_large', [
                                         'class' => 'w-full object-cover',
-                                        'loading' => 'lazy'
+                                        'loading' => 'lazy',
+                                        'data-aos' => 'zoom-in',
+                                        'data-aos-duration' => '600'
                                 ]); ?>
                             <?php else : ?>
                                 <img src="https://picsum.photos/600/345" alt="<?php the_title(); ?>"
-                                     class="w-full object-cover" loading="lazy"/>
+                                     class="w-full object-cover" loading="lazy"
+                                     data-aos="zoom-in" data-aos-duration="600"/>
                             <?php endif; ?>
                         </a>
                         <div class="mt-4 flex flex-col flex-1">
                             <time datetime="<?php echo get_the_date('c'); ?>"
-                                  class="font-['Lexend'] text-xs font-semibold uppercase text-[#6A7C99]">
+                                  class="font-['Lexend'] text-xs font-semibold uppercase text-[#6A7C99]"
+                                  data-aos="fade-up" data-aos-duration="600">
                                 <?php echo get_the_date(); ?>
                             </time>
-                            <h3 class="mt-2 text-lg font-semibold leading-snug">
+                            <h3 class="mt-2 text-lg font-semibold leading-snug"
+                                data-aos="fade-up" data-aos-delay="100" data-aos-duration="650">
                                 <a href="<?php the_permalink(); ?>"
                                    class="font-['Philosopher'] hover:text-pink-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-400">
                                     <?php the_title(); ?>
                                 </a>
                             </h3>
-                            <div class="mt-3">
+                            <div class="mt-3" data-aos="fade-up" data-aos-delay="150" data-aos-duration="650">
                                 <a href="<?php the_permalink(); ?>" aria-label="Read more about <?php the_title(); ?>"
                                    class="inline-flex items-center text-pink-400 hover:text-pink-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-400">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"

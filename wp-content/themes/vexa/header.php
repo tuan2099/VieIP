@@ -7,6 +7,10 @@
     <?php wp_head(); ?>
 </head>
 <style>
+    html {
+        scroll-behavior: smooth;
+    }
+
     .custom_bg1 {
         background-color: transparent;
         background-image: linear-gradient(210deg, #FFFFFF00 33%, #FFFFFF45 190%);

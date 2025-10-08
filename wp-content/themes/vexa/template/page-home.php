@@ -17,7 +17,7 @@ get_header();
     <!-- Services Section -->
 <?php get_template_part('template-parts/services-section'); ?>
 
-    <!-- Ourteam Section -->
+    <!-- Our Team Section -->
 <?php get_template_part('template-parts/ourteam-section'); ?>
 
     <!-- About Section -->

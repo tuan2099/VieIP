@@ -52,22 +52,26 @@ if ($img2_field) {
 }
 ?>
 
-<section class="py-20">
+<section class="py-20" data-aos="fade-up" data-aos-duration="700" data-aos-once="true">
     <div class="container mx-auto px-6 md:px-6 max-w-[1440px]">
         <div class="grid md:grid-cols-3 items-center gap-3">
             <!-- Left Content -->
             <div>
-                <p class="text-sm font-semibold text-[#E43256] tracking-wide font-['Lexend']">
+                <p class="text-sm font-semibold text-[#E43256] tracking-wide font-['Lexend']"
+                   data-aos="fade-down" data-aos-duration="600" data-aos-once="true">
                     <?php echo esc_html($sub_title); ?>
                 </p>
-                <h1 class="mt-2 text-3xl md:text-[40px] font-bold leading-tight relative font-['Philosopher']">
-                    <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[5%] lg:-top-[7%] -top-[25%]"></div>
+                <h1 class="mt-2 text-3xl md:text-[40px] font-bold leading-tight relative font-['Philosopher']"
+                    data-aos="fade-up" data-aos-delay="100" data-aos-duration="700" data-aos-once="true">
+                    <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[5%] lg:-top-[7%] -top-[25%]"
+                         data-aos="zoom-in" data-aos-delay="150" data-aos-duration="500" data-aos-once="true"></div>
                     <?php echo $title_html; ?>
                 </h1>
-                <p class="mt-6 text-base text-gray-400 leading-relaxed max-w-lg font-['Lexend']">
+                <p class="mt-6 text-base text-gray-400 leading-relaxed max-w-lg font-['Lexend']"
+                   data-aos="fade-up" data-aos-delay="200" data-aos-duration="700" data-aos-once="true">
                     <?php echo wp_kses_post(nl2br($desc_raw)); ?>
                 </p>
-                <div class="mt-8">
+                <div class="mt-8" data-aos="fade-up" data-aos-delay="300" data-aos-duration="700" data-aos-once="true">
                     <a
                             href="<?php echo $button_link ? esc_url($button_link) : '#'; ?>"
                             class="inline-block  font-['Lexend'] rounded-full border-2 border-[#552ae0] px-8 py-3 text-[16px] font-medium text-purple-200 hover:bg-[#552ae0] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
@@ -84,6 +88,7 @@ if ($img2_field) {
                     <img src="<?php echo esc_url($img1_url); ?>"
                          alt="<?php echo esc_attr($img1_alt); ?>"
                          class="w-full rounded-2xl"
+                         data-aos="zoom-in-up" data-aos-delay="150" data-aos-duration="600" data-aos-once="true"
                             <?php if ($img1_w) echo 'width="' . (int)$img1_w . '"'; ?>
                             <?php if ($img1_h) echo ' height="' . (int)$img1_h . '"'; ?>
                          loading="lazy"/>
@@ -92,6 +97,7 @@ if ($img2_field) {
                     <img src="<?php echo esc_url($img2_url); ?>"
                          alt="<?php echo esc_attr($img2_alt); ?>"
                          class="w-full rounded-2xl"
+                         data-aos="zoom-in-up" data-aos-delay="300" data-aos-duration="600" data-aos-once="true"
                             <?php if ($img2_w) echo 'width="' . (int)$img2_w . '"'; ?>
                             <?php if ($img2_h) echo ' height="' . (int)$img2_h . '"'; ?>
                          loading="lazy"/>
@@ -100,3 +106,4 @@ if ($img2_field) {
         </div>
     </div>
 </section>
+

@@ -5,17 +5,20 @@ $sub_title = $services['subtitle'] ?? '';
 $title = $services['title'] ?? '';
 ?>
 
-<section class="py-20">
+<section class="py-20 " data-aos="fade-up" data-aos-duration="800" data-aos-once="true">
     <div class="container mx-auto px-6 md:px-6 max-w-[1440px]">
         <!-- Section Header -->
         <header class="mb-12">
             <p
                     class="text-sm font-semibold text-[#E43256] tracking-wide font-['Lexend']"
+                    data-aos="fade-up" data-aos-duration="600" data-aos-once="true"
             >
                 <?php echo esc_html($sub_title); ?>
             </p>
-            <h1 class="font-['Philosopher'] mt-3 text-3xl md:text-4xl font-bold leading-tight relative">
-                <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[5%] lg:-left-[1%] -top-[15%]"></div>
+            <h1 class="font-['Philosopher'] mt-3 text-3xl md:text-4xl font-bold leading-tight relative"
+                data-aos="fade-up" data-aos-delay="100" data-aos-duration="700" data-aos-once="true">
+                <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[5%] lg:-left-[1%] -top-[15%]"
+                      data-aos="zoom-in" data-aos-delay="150" data-aos-duration="600" data-aos-once="true"></div>
                 <span
                         class=""
                 >
@@ -25,7 +28,7 @@ $title = $services['title'] ?? '';
         </header>
 
         <!-- Services Grid -->
-        <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-6">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-6" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700" data-aos-once="true">
             <?php
             $args = array(
                     'post_type' => 'service',

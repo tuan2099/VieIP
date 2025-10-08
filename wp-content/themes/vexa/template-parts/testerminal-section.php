@@ -5,22 +5,27 @@ $title = $testerminal['title'] ?? '';
 $sub_title = $testerminal['subtitle'] ?? '';
 ?>
 
-<section id="testimonials" aria-labelledby="testimonials-title" class="bg-[#190939]">
+<section id="testimonials" aria-labelledby="testimonials-title" class="bg-[#190939]"
+         data-aos="fade-up" data-aos-duration="800" data-aos-once="true">
     <div class="max-w-[1440px] mx-auto px-6 sm:px-9">
         <div class="max-w-[1400px] mx-auto pb-36 relative">
             <!-- Head -->
-            <header class="pt-24 flex flex-col items-center gap-5">
+            <header class="pt-24 flex flex-col items-center gap-5"
+                    data-aos="fade-down" data-aos-duration="700" data-aos-once="true">
                 <div class="pb-20">
                     <div class="max-w-[496.56px] mx-auto flex flex-col items-center gap-6">
-                        <p class="text-center text-rose-500 text-lg font-normal font-['Lexend'] leading-normal">
+                        <p class="text-center text-rose-500 text-lg font-normal font-['Lexend'] leading-normal"
+                           data-aos="fade-up" data-aos-duration="600" data-aos-once="true">
                             <?php echo esc_html($sub_title); ?>
                         </p>
 
                         <div class="relative z-0">
-                            <span class="absolute -left-[25px] -top-[9px] w-16 h-16 bg-gradient-to-br from-cyan-400 via-orange-400 to-rose-500 rounded-full z-0 pointer-events-none"></span>
+                            <span class="absolute -left-[25px] -top-[9px] w-16 h-16 bg-gradient-to-br from-cyan-400 via-orange-400 to-rose-500 rounded-full z-0 pointer-events-none"
+                                  data-aos="zoom-in" data-aos-delay="100" data-aos-duration="600" data-aos-once="true"></span>
 
                             <h2 id="testimonials-title"
-                                class="relative z-10 text-center text-white text-4xl font-bold font-['Philosopher'] leading-[52px] tracking-wide">
+                                class="relative z-10 text-center text-white text-4xl font-bold font-['Philosopher'] leading-[52px] tracking-wide"
+                                data-aos="fade-up" data-aos-delay="150" data-aos-duration="700" data-aos-once="true">
                                 <?php echo esc_html($title); ?>
                             </h2>
                         </div>
@@ -29,7 +34,7 @@ $sub_title = $testerminal['subtitle'] ?? '';
             </header>
 
             <!-- Body -->
-            <section class="relative">
+            <section class="relative" data-aos="fade-up" data-aos-delay="100" data-aos-duration="700" data-aos-once="true">
                 <div class="swiper testimonial-swiper">
                     <div class="swiper-wrapper">
                         <?php
@@ -60,7 +65,8 @@ $sub_title = $testerminal['subtitle'] ?? '';
                                 <div class="swiper-slide">
                                     <div class="w-full grid grid-cols-1 md:grid-cols-[24rem_1fr] gap-8">
                                         <!-- Ảnh bên trái -->
-                                        <figure class="md:row-span-1">
+                                        <figure class="md:row-span-1"
+                                                data-aos="zoom-in" data-aos-duration="650" data-aos-once="true">
                                             <?php if ($img_url): ?>
                                                 <img
                                                         class="w-full max-w-96 md:max-w-none md:w-96 md:h-[490px] h-auto object-cover rounded-md"
@@ -71,10 +77,12 @@ $sub_title = $testerminal['subtitle'] ?? '';
                                         </figure>
 
                                         <!-- Nội dung bên phải -->
-                                        <figure class="flex flex-col justify-center gap-12">
+                                        <figure class="flex flex-col justify-center gap-12"
+                                                data-aos="fade-left" data-aos-duration="700" data-aos-once="true">
                                             <?php if ($quote): ?>
                                                 <blockquote
-                                                        class="max-w-[559px] text-[#7C91B3] text-xl font-medium font-['Lexend'] leading-relaxed">
+                                                        class="max-w-[559px] text-[#7C91B3] text-xl font-medium font-['Lexend'] leading-relaxed"
+                                                        data-aos="fade-up" data-aos-delay="100" data-aos-duration="650" data-aos-once="true">
                                                     <?php echo wp_kses_post($quote); ?>
                                                 </blockquote>
                                             <?php endif; ?>
@@ -82,10 +90,12 @@ $sub_title = $testerminal['subtitle'] ?? '';
                                             <figcaption>
                                                 <div class="text-yellow-400 text-3xl leading-7"
                                                      aria-label="<?php echo esc_attr($rating); ?> out of 5 stars"
-                                                     role="img">
+                                                     role="img"
+                                                     data-aos="zoom-in" data-aos-delay="150" data-aos-duration="600" data-aos-once="true">
                                                     <?php echo esc_html($stars); ?>
                                                 </div>
-                                                <div class="mt-3 font-['Philosopher']">
+                                                <div class="mt-3 font-['Philosopher']"
+                                                     data-aos="fade-up" data-aos-delay="200" data-aos-duration="650" data-aos-once="true">
                                                     <?php if ($name): ?>
                                                         <div class="text-[#7C91B3] text-base font-bold capitalize"><?php echo esc_html($name); ?></div>
                                                     <?php endif; ?>
@@ -103,9 +113,9 @@ $sub_title = $testerminal['subtitle'] ?? '';
                         ?>
                     </div>
 
-
                     <!-- Pagination (dots) -->
-                    <div class="swiper-pagination mt-6"></div>
+                    <div class="swiper-pagination mt-6"
+                         data-aos="fade-up" data-aos-delay="150" data-aos-duration="600" data-aos-once="true"></div>
                 </div>
             </section>
 
@@ -116,16 +126,20 @@ $sub_title = $testerminal['subtitle'] ?? '';
 
             if ($gallery && is_array($gallery)) : ?>
                 <ul class="pt-12 pb-28 grid grid-cols-2 md:grid-cols-5 gap-9 place-items-center"
-                    aria-label="Trusted by partner logos">
+                    aria-label="Trusted by partner logos"
+                    data-aos="fade-up" data-aos-delay="200" data-aos-duration="700" data-aos-once="true">
                     <?php foreach ($gallery as $image) : ?>
-                        <li class="w-[70px]">
+                        <li class="w-[70px]" data-aos="zoom-in" data-aos-duration="600" data-aos-once="true">
                             <?php echo wp_get_attachment_image(
                                     $image['ID'],
                                     'medium',
                                     false,
                                     [
                                             'class' => 'max-h-24 w-full object-contain  grayscale opacity-80 hover:opacity-100 transition',
-                                            'alt' => esc_attr($image['alt'] ?: $image['title'])
+                                            'alt'   => esc_attr($image['alt'] ?: $image['title']),
+                                            'data-aos' => 'zoom-in',
+                                            'data-aos-duration' => '600',
+                                            'data-aos-once' => 'true',
                                     ]
                             ); ?>
                         </li>
@@ -134,6 +148,7 @@ $sub_title = $testerminal['subtitle'] ?? '';
             <?php endif; ?>
 
             <?php get_template_part('template-parts/partner-section'); ?>
+
             <!-- Họa tiết mờ -->
             <img
                     class="w-96 absolute left-[-15px] top-[130px]"
@@ -143,6 +158,7 @@ $sub_title = $testerminal['subtitle'] ?? '';
                     width="384"
                     height="384"
                     aria-hidden="true"
+                    data-aos="fade" data-aos-duration="800" data-aos-once="true"
             />
             <img
                     class="w-64 absolute right-0 -top-[9px]"
@@ -152,10 +168,12 @@ $sub_title = $testerminal['subtitle'] ?? '';
                     width="256"
                     height="256"
                     aria-hidden="true"
+                    data-aos="fade" data-aos-delay="100" data-aos-duration="800" data-aos-once="true"
             />
         </div>
     </div>
 </section>
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {

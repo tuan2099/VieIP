@@ -10,8 +10,7 @@ $button = isset($sec['button']) ? $sec['button'] : '';
 $button_link = isset($sec['button_link']) ? $sec['button_link'] : '';
 ?>
 
-
-<section class="py-20">
+<section class="py-20" data-aos="fade-up" data-aos-duration="800" data-aos-once="true">
     <div class="container mx-auto px-6 md:px-6 max-w-[1440px]">
         <div class="">
             <!-- Team Members -->
@@ -20,23 +19,26 @@ $button_link = isset($sec['button_link']) ? $sec['button_link'] : '';
                     <div class="flex flex-col justify-center">
                         <p
                                 class="text-sm font-semibold text-[#E43256] tracking-wide font-['Lexend']"
+                                data-aos="fade-down" data-aos-duration="600" data-aos-once="true"
                         >
                             <?php echo esc_html($subtitle); ?>
                         </p>
-                        <h1 class="mt-3 text-3xl md:text-4xl font-bold leading-tight relative">
-                            <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[5%] lg:-top-[7%] -top-[20%]"></div>
-                            <span
-                                    class="font-['Philosopher']"
-                            >
-                            <?php echo esc_html($title); ?>
-                        </span>
+                        <h1 class="mt-3 text-3xl md:text-4xl font-bold leading-tight relative"
+                            data-aos="fade-up" data-aos-delay="100" data-aos-duration="700" data-aos-once="true">
+                            <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[5%] lg:-top-[7%] -top-[20%]"
+                                 data-aos="zoom-in" data-aos-delay="150" data-aos-duration="600" data-aos-once="true"></div>
+                            <span class="font-['Philosopher']">
+                                <?php echo esc_html($title); ?>
+                            </span>
                         </h1>
                         <p
                                 class="mt-6 text-base text-gray-400 leading-relaxed max-w-md font-['Lexend']"
+                                data-aos="fade-up" data-aos-delay="200" data-aos-duration="700" data-aos-once="true"
                         >
                             <?php echo wp_kses_post(nl2br($desc)); ?>
                         </p>
                     </div>
+
                     <!-- Member -->
                     <?php
                     $q = new WP_Query([
@@ -59,12 +61,16 @@ $button_link = isset($sec['button_link']) ? $sec['button_link'] : '';
                                         'class' => 'w-full h-56 md:h-96 object-cover',
                                         'alt' => esc_attr(get_the_title()),
                                         'loading' => 'lazy',
+                                    // AOS: chỉ thêm data-*
+                                        'data-aos' => 'zoom-in',
+                                        'data-aos-duration' => '650',
+                                        'data-aos-once' => 'true',
                                 ]);
                             } else {
                                 $seed = get_the_ID();
                                 $fallback = 'https://picsum.photos/seed/' . $seed . '/600/345';
                                 $img_html = '<img src="' . esc_url($fallback) . '" alt="' . esc_attr(get_the_title()) .
-                                        '" class="w-full h-56 md:h-96 object-cover" loading="lazy">';
+                                        '" class="w-full h-56 md:h-96 object-cover" loading="lazy" data-aos="zoom-in" data-aos-duration="650" data-aos-once="true">';
                             }
 
                             // ACF fields
@@ -74,12 +80,13 @@ $button_link = isset($sec['button_link']) ? $sec['button_link'] : '';
                             $twitter = function_exists('get_field') ? (get_field('twitter') ?: '') : '';
                             ?>
 
-                            <article class="relative overflow-hidden rounded-2xl group">
+                            <article class="relative overflow-hidden rounded-2xl group"
+                                     data-aos="fade-up" data-aos-duration="700" data-aos-once="true">
                                 <?= $img_html; ?>
 
                                 <!-- Overlay -->
-                                <div class="absolute inset-0 bg-gradient-to-t from-red-600/80 to-transparent 
-                                            opacity-0 group-hover:opacity-100 transition-opacity duration-500 
+                                <div class="absolute inset-0 bg-gradient-to-t from-red-600/80 to-transparent
+                                            opacity-0 group-hover:opacity-100 transition-opacity duration-500
                                             flex flex-col justify-end p-6 text-white">
                                     <div>
                                         <h3 class="font-semibold text-lg font-['Philosopher']"><?php the_title(); ?></h3>
@@ -127,7 +134,8 @@ $button_link = isset($sec['button_link']) ? $sec['button_link'] : '';
                     <?php endif; ?>
 
                     <!-- CTA Button -->
-                    <div class="mt-8 flex items-center text-center custom_bg1 rounded-2xl">
+                    <div class="mt-8 flex items-center text-center custom_bg1 rounded-2xl"
+                         data-aos="fade-up" data-aos-delay="150" data-aos-duration="700" data-aos-once="true">
                         <a
                                 href="<?php echo esc_url($button_link); ?>"
                                 class="inline-flex mx-auto items-center rounded-full border-2 border-[#552ae0] px-8 py-3 text-[16px] font-medium text-purple-200 hover:bg-[#552ae0] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"

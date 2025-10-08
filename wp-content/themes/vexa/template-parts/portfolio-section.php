@@ -1,14 +1,16 @@
-<section class="py-20 overflow-hidden">
+<section class="py-20 overflow-hidden" data-aos="fade-up" data-aos-duration="800" data-aos-once="true">
     <div class="container mx-auto px-4 md:px-6 max-w-[1440px] relative">
 
         <!-- NỀN tràn sang PHẢI, vẫn bám mép trái của container -->
         <div class="absolute inset-y-0 left-0 right-0 lg:right-[calc(50%-50vw)]
-                bg-[#1a1a22] rounded-l-3xl -z-10"></div>
+                bg-[#1a1a22] rounded-l-3xl -z-10"
+             data-aos="fade-right" data-aos-duration="900" data-aos-once="true"></div>
 
-        <!-- Nội dung (không để bg ở đây nữa) -->
+        <!-- Nội dung -->
         <div class="relative grid grid-cols-1  gap-12 lg:grid-cols-5 items-center pt-[140px]">
             <!-- Left Image -->
-            <div class="flex justify-center col-span-2">
+            <div class="flex justify-center col-span-2"
+                 data-aos="zoom-in-left" data-aos-duration="700" data-aos-once="true">
                 <img
                         src="https://demo.phlox.pro/agency-aestry/wp-content/uploads/sites/279/2021/05/Girl-Sitting.png"
                         alt="Creative person working on laptop"
@@ -20,15 +22,19 @@
             <div class="col-span-3">
                 <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
                     <div>
-                        <p class="text-sm font-semibold text-[#E43256] tracking-wide font-['Lexend']">Portfolio</p>
-                        <h1 class="mt-2 text-3xl md:text-4xl font-bold leading-tight relative">
-                            <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[5%] -top-[15%]"></div>
+                        <p class="text-sm font-semibold text-[#E43256] tracking-wide font-['Lexend']"
+                           data-aos="fade-down" data-aos-duration="600" data-aos-once="true">Portfolio</p>
+                        <h1 class="mt-2 text-3xl md:text-4xl font-bold leading-tight relative"
+                            data-aos="fade-up" data-aos-delay="100" data-aos-duration="700" data-aos-once="true">
+                            <div class="custom_bg_text absolute -z-10 h-[60px] w-[60px] -left-[5%] -top-[15%]"
+                                 data-aos="zoom-in" data-aos-delay="150" data-aos-duration="600" data-aos-once="true"></div>
                             <span class="font-['Philosopher']">
-                Our Recent Works
-              </span>
+                                Our Recent Works
+                            </span>
                         </h1>
                     </div>
-                    <div class="mt-4 md:mt-0">
+                    <div class="mt-4 md:mt-0"
+                         data-aos="fade-left" data-aos-delay="150" data-aos-duration="650" data-aos-once="true">
                         <a href="#"
                            class="font-['Lexend'] inline-flex hover:bg-[#552ae0] rounded-full border-2 border-[#552ae0] px-12 py-3 text-[16px] font-medium text-purple-200 hover:bg-[#552ae0] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#552ae0]">
                             Explore All Projects
@@ -71,13 +77,15 @@
 
                 $q = new WP_Query($args);
                 if ($q->have_posts()) : ?>
-                    <div class="relative lg:mr-[calc(50%-50vw)] lg:pr-4 overflow-visible">
+                    <div class="relative lg:mr-[calc(50%-50vw)] lg:pr-4 overflow-visible"
+                         data-aos="fade-up" data-aos-delay="100" data-aos-duration="700" data-aos-once="true">
                         <div id="<?php echo esc_attr($slider_id); ?>"
                              class="portfolio-swiper swiper">
                             <div class="swiper-wrapper">
                                 <?php while ($q->have_posts()) : $q->the_post(); ?>
                                     <div class="swiper-slide">
-                                        <article class="relative overflow-hidden rounded-2xl group">
+                                        <article class="relative overflow-hidden rounded-2xl group"
+                                                 data-aos="fade-up" data-aos-duration="700" data-aos-once="true">
                                             <!-- Ảnh -->
                                             <?php
                                             if (has_post_thumbnail()) {
@@ -85,27 +93,29 @@
                                                         'class' => 'lg:w-full h-[25rem] object-cover transform-gpu will-change-transform transition-transform duration-500 ease-out group-hover:scale-105',
                                                         'loading' => 'lazy',
                                                         'alt' => esc_attr(get_the_title()),
+                                                        'data-aos' => 'zoom-in',
+                                                        'data-aos-duration' => '650',
+                                                        'data-aos-once' => 'true',
                                                 ]);
                                             } else {
                                                 echo '<img src="https://picsum.photos/600/400?random=' . esc_attr(get_the_ID()) .
-                                                        '" class="lg:w-full h-[25rem] object-cover transform-gpu will-change-transform transition-transform duration-500 ease-out group-hover:scale-105" alt="">';
+                                                        '" class="lg:w-full h-[25rem] object-cover transform-gpu will-change-transform transition-transform duration-500 ease-out group-hover:scale-105" alt="" loading="lazy" data-aos="zoom-in" data-aos-duration="650" data-aos-once="true">';
                                             }
                                             ?>
 
                                             <!-- Overlay đỏ + info -->
                                             <div
                                                     class="pointer-events-none absolute inset-0
-                                bg-gradient-to-t from-red-600/80 to-transparent
-                                opacity-0 transition-opacity duration-500 ease-out
-                                group-hover:opacity-100">
+                                                    bg-gradient-to-t from-red-600/80 to-transparent
+                                                    opacity-0 transition-opacity duration-500 ease-out
+                                                    group-hover:opacity-100">
                                             </div>
 
                                             <!-- Text (title + meta) trượt lên -->
-                                            <div class="absolute inset-x-0 bottom-0 p-6 text-white
-                                    flex flex-col justify-end">
+                                            <div class="absolute inset-x-0 bottom-0 p-6 text-white flex flex-col justify-end">
                                                 <div class="transform-gpu translate-y-6 opacity-0
-                                      transition-all duration-500 ease-out
-                                      group-hover:translate-y-0 group-hover:opacity-100">
+                                                            transition-all duration-500 ease-out
+                                                            group-hover:translate-y-0 group-hover:opacity-100">
                                                     <h3 class="font-semibold text-lg">
                                                         <a href="<?php the_permalink(); ?>"
                                                            class="hover:underline font-['Philosopher']"><?php the_title(); ?></a>
@@ -132,6 +142,7 @@
 </section>
 
 
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         new Swiper('.portfolio-swiper', {
@@ -151,7 +162,7 @@
                 },
                 1024: {
                     // desktop
-                    slidesPerView: 2.2,
+                    slidesPerView: 3.2,
                 },
             },
         });

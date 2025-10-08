@@ -14,6 +14,14 @@
 <div class="text-3xl"></div>
 <?php vexatheme_footer(); ?>
 <?php wp_footer(); ?>
+<script>
+    AOS.init({
+        once: true,
+        duration: 700,
+        offset: 80,
+        easing: 'ease-out'
+    });
+</script>
 </body>
 
 </html>

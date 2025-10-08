@@ -1,9 +1,10 @@
 <?php
 $logos = get_field('partner_logos'); // ACF Gallery
 
-if ($logos && is_array($logos)) : ?>
+ if ($logos && is_array($logos)) : ?>
     <ul class="pt-12 pb-28 grid grid-cols-2 md:grid-cols-5 gap-5 place-items-center"
-        aria-label="Trusted by partner logos">
+        aria-label="Trusted by partner logos"
+        data-aos="fade-up" data-aos-duration="700" data-aos-once="true">
         <?php foreach ($logos as $img) :
             // Chuẩn hoá dữ liệu ảnh
             $id = 0;
@@ -25,22 +26,24 @@ if ($logos && is_array($logos)) : ?>
             // Tạo thẻ <img> (ưu tiên ID để có srcset)
             if ($id) {
                 $img_html = wp_get_attachment_image($id, 'medium', false, [
-                        'class' => 'max-h-11 w-auto object-contain opacity-80 hover:opacity-100 transition',
-                        'loading' => 'lazy',
-                        'alt' => $alt ?: 'Partner logo',
-                        'aria-label' => $alt ?: 'Partner logo',
+                    'class' => 'max-h-11 w-auto object-contain opacity-80 hover:opacity-100 transition',
+                    'loading' => 'lazy',
+                    'alt' => $alt ?: 'Partner logo',
+                    'aria-label' => $alt ?: 'Partner logo',
                 ]);
             } else {
                 $img_html = sprintf(
-                        '<img src="%s" alt="%s" loading="lazy" class="max-h-11 w-auto object-contain opacity-80 hover:opacity-100 transition" />',
-                        esc_url($url),
-                        esc_attr($alt ?: 'Partner logo')
+                    '<img src="%s" alt="%s" loading="lazy" class="max-h-11 w-auto object-contain opacity-80 hover:opacity-100 transition" />',
+                    esc_url($url),
+                    esc_attr($alt ?: 'Partner logo')
                 );
             }
             ?>
-            <li class="w-full flex justify-center items-center">
+            <li class="w-full flex justify-center items-center"
+                data-aos="zoom-in" data-aos-duration="600" data-aos-once="true">
                 <?php echo $img_html; ?>
             </li>
         <?php endforeach; ?>
     </ul>
 <?php endif; ?>
+

@@ -5,8 +5,8 @@ get_header(); ?>
              style="background: url('<?php echo get_template_directory_uri(); ?>/assets/images/backgound-head.svg'); background-position: bottom; background-size: cover;
                      background-repeat: no-repeat;">
         <div class="container mx-auto px-4 md:px-6 max-w-[1440px]">
-            <h1 class="text-[65px] text-white"><?php the_title(); ?></h1>
-            <div class=""><?php vexa_breadcrumbs(); ?></div>
+            <h1 class="text-[65px] text-white font-['Philosopher']"><?php the_title(); ?></h1>
+            <div class="font-['Lexend']"><?php vexa_breadcrumbs(); ?></div>
         </div>
         <div class="custom_blur -z-10"></div>
     </section>
@@ -21,38 +21,45 @@ get_header(); ?>
 
 
     <!-- Content -->
-    <div class="container mx-auto px-4 md:px-6 max-w-[1440px] py-12 lg:mb-64 mb-32">
-        <div class="max-w-[500px] my-10 mx-auto text-center">
+    <div class="container mx-auto px-4 md:px-6 max-w-[1440px] py-12 lg:mb-64 mb-32"
+         data-aos="fade-up" data-aos-duration="800" data-aos-once="true">
+        <div class="max-w-[500px] my-10 mx-auto text-center"
+             data-aos="fade-down" data-aos-duration="700" data-aos-once="true">
             <div class="relative inline-block">
-                <span
-                        aria-hidden="true"
-                        class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-2
-                       w-14 h-14 rounded-full
-                       bg-gradient-to-br from-cyan-400 via-orange-400 to-rose-500 z-0">
-              </span>
-                <h2 class="relative z-10 text-white text-3xl md:text-4xl font-bold font-['Philosopher'] leading-tight">
+            <span
+                    aria-hidden="true"
+                    class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-2 w-14 h-14 rounded-full
+                       bg-gradient-to-br from-cyan-400 via-orange-400 to-rose-500 z-0"
+                    ></span>
+                <h2 class="relative z-10 text-white text-3xl md:text-4xl font-bold font-['Philosopher'] leading-tight"
+                    data-aos="fade-up" data-aos-delay="120" data-aos-duration="650" data-aos-once="true">
                     Corporate identity
                 </h2>
             </div>
         </div>
-        <div class="max-w-[900px] mx-auto text-[#6A7C99] lg:mb-32">
+
+        <div class="max-w-[900px] mx-auto text-[#6A7C99] lg:mb-32"
+             data-aos="fade-up" data-aos-delay="160" data-aos-duration="700" data-aos-once="true">
             <?php the_content(); ?>
         </div>
 
-        <div class="max-w-[500px] my-20 mx-auto text-center">
+        <div class="max-w-[500px] my-20 mx-auto text-center"
+             data-aos="fade-down" data-aos-duration="700" data-aos-once="true">
             <div class="relative inline-block">
-                <span
-                        aria-hidden="true"
-                        class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-2
-                       w-14 h-14 rounded-full
-                       bg-gradient-to-br from-cyan-400 via-orange-400 to-rose-500 z-0">
-              </span>
-                <h2 class="relative z-10 text-white text-3xl md:text-4xl font-bold font-['Philosopher'] leading-tight">
+            <span
+                    aria-hidden="true"
+                    class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-2 w-14 h-14 rounded-full
+                       bg-gradient-to-br from-cyan-400 via-orange-400 to-rose-500 z-0"
+                    ></span>
+                <h2 class="relative z-10 text-white text-3xl md:text-4xl font-bold font-['Philosopher'] leading-tight"
+                    data-aos="fade-up" data-aos-delay="120" data-aos-duration="650" data-aos-once="true">
                     Team of Experts
                 </h2>
             </div>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 lg:mb-32">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 lg:mb-32"
+             data-aos="fade-up" data-aos-delay="150" data-aos-duration="700" data-aos-once="true">
             <?php
             $q = new WP_Query([
                     'post_type' => 'team',
@@ -64,23 +71,21 @@ get_header(); ?>
             if ($q->have_posts()) :
                 while ($q->have_posts()) : $q->the_post();
 
-                    // Ảnh đại diện
                     $img_url = get_the_post_thumbnail_url(get_the_ID(), 'medium_large');
                     if (!$img_url) {
-                        $img_url = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=360&fit=crop'; // nếu cần
+                        $img_url = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=360&fit=crop';
                     }
 
-                    // Chức danh (thử nhiều key để không phải đổi ACF)
                     $role = get_post_meta(get_the_ID(), 'role', true);
                     if (!$role) $role = get_post_meta(get_the_ID(), 'job_title', true);
                     if (!$role) $role = get_post_meta(get_the_ID(), 'position', true);
 
-                    // Social (nếu có ACF/meta)
                     $facebook = get_post_meta(get_the_ID(), 'facebook', true);
                     $linkedin = get_post_meta(get_the_ID(), 'linkedin', true);
                     $twitter = get_post_meta(get_the_ID(), 'twitter', true);
                     ?>
-                    <div class="group relative overflow-hidden rounded-3xl shadow-2xl transition-transform duration-300">
+                    <div class="group relative overflow-hidden rounded-3xl shadow-2xl transition-transform duration-300"
+                         data-aos="fade-up" data-aos-duration="700" data-aos-once="true">
                         <div class="aspect-[3/4] relative">
                             <img src="<?php echo esc_url($img_url); ?>"
                                  alt="<?php echo esc_attr(get_the_title()); ?>"
@@ -114,7 +119,7 @@ get_header(); ?>
                                         <a href="<?php echo esc_url($twitter); ?>" target="_blank" rel="noopener"
                                            class="w-8 h-8 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition-colors">
                                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.60a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
                                             </svg>
                                         </a>
                                     <?php endif; ?>
@@ -125,36 +130,37 @@ get_header(); ?>
                 <?php
                 endwhile;
                 wp_reset_postdata();
-            else:
-                // Nếu chưa có bài team, tạm không render gì để giữ nguyên layout
             endif;
             ?>
-
         </div>
-        <div class="text-left my-20">
+
+        <div class="text-left my-20"
+             data-aos="fade-down" data-aos-duration="700" data-aos-once="true">
             <div class="relative inline-block">
-                <span
-                        aria-hidden="true"
-                        class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-2
-                       w-14 h-14 rounded-full
-                       bg-gradient-to-br from-cyan-400 via-orange-400 to-rose-500 z-0">
-              </span>
-                <h2 class="relative z-10 text-white text-3xl md:text-4xl font-bold font-['Philosopher'] leading-tight">
+            <span
+                    aria-hidden="true"
+                    class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-2 w-14 h-14 rounded-full
+                       bg-gradient-to-br from-cyan-400 via-orange-400 to-rose-500 z-0"
+                    ></span>
+                <h2 class="relative z-10 text-white text-3xl md:text-4xl font-bold font-['Philosopher'] leading-tight"
+                    data-aos="fade-up" data-aos-delay="120" data-aos-duration="650" data-aos-once="true">
                     Team of Experts
                 </h2>
             </div>
         </div>
+
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 lg:mb-32">
             <!-- Left Column -->
-            <div class="space-y-6 lg:space-y-8">
-                <!-- Feature 1 -->
-                <div class="flex items-start gap-4 group">
+            <div class="space-y-6 lg:space-y-8"
+                 data-aos="fade-right" data-aos-duration="700" data-aos-once="true">
+                <div class="flex items-start gap-4 group"
+                     data-aos="fade-up" data-aos-delay="0" data-aos-duration="650" data-aos-once="true">
+                    <!-- Feature 1 -->
                     <div class="flex-shrink-0 mt-1">
                         <div class="w-8 h-8 rounded-full border-2 border-red-500 flex items-center justify-center group-hover:bg-red-500 transition-colors duration-300">
                             <svg class="w-4 h-4 text-red-500 group-hover:text-white transition-colors duration-300"
                                  fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                      d="M5 13l4 4L19 7"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
                             </svg>
                         </div>
                     </div>
@@ -163,14 +169,14 @@ get_header(); ?>
                     </p>
                 </div>
 
-                <!-- Feature 2 -->
-                <div class="flex items-start gap-4 group">
+                <div class="flex items-start gap-4 group"
+                     data-aos="fade-up" data-aos-delay="80" data-aos-duration="650" data-aos-once="true">
+                    <!-- Feature 2 -->
                     <div class="flex-shrink-0 mt-1">
                         <div class="w-8 h-8 rounded-full border-2 border-red-500 flex items-center justify-center group-hover:bg-red-500 transition-colors duration-300">
                             <svg class="w-4 h-4 text-red-500 group-hover:text-white transition-colors duration-300"
                                  fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                      d="M5 13l4 4L19 7"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
                             </svg>
                         </div>
                     </div>
@@ -179,14 +185,14 @@ get_header(); ?>
                     </p>
                 </div>
 
-                <!-- Feature 3 -->
-                <div class="flex items-start gap-4 group">
+                <div class="flex items-start gap-4 group"
+                     data-aos="fade-up" data-aos-delay="160" data-aos-duration="650" data-aos-once="true">
+                    <!-- Feature 3 -->
                     <div class="flex-shrink-0 mt-1">
                         <div class="w-8 h-8 rounded-full border-2 border-red-500 flex items-center justify-center group-hover:bg-red-500 transition-colors duration-300">
                             <svg class="w-4 h-4 text-red-500 group-hover:text-white transition-colors duration-300"
                                  fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                      d="M5 13l4 4L19 7"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
                             </svg>
                         </div>
                     </div>
@@ -197,15 +203,16 @@ get_header(); ?>
             </div>
 
             <!-- Right Column -->
-            <div class="space-y-6 lg:space-y-8">
-                <!-- Feature 4 -->
-                <div class="flex items-start gap-4 group">
+            <div class="space-y-6 lg:space-y-8"
+                 data-aos="fade-left" data-aos-duration="700" data-aos-once="true">
+                <div class="flex items-start gap-4 group"
+                     data-aos="fade-up" data-aos-delay="0" data-aos-duration="650" data-aos-once="true">
+                    <!-- Feature 4 -->
                     <div class="flex-shrink-0 mt-1">
                         <div class="w-8 h-8 rounded-full border-2 border-red-500 flex items-center justify-center group-hover:bg-red-500 transition-colors duration-300">
                             <svg class="w-4 h-4 text-red-500 group-hover:text-white transition-colors duration-300"
                                  fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                      d="M5 13l4 4L19 7"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
                             </svg>
                         </div>
                     </div>
@@ -214,14 +221,14 @@ get_header(); ?>
                     </p>
                 </div>
 
-                <!-- Feature 5 -->
-                <div class="flex items-start gap-4 group">
+                <div class="flex items-start gap-4 group"
+                     data-aos="fade-up" data-aos-delay="80" data-aos-duration="650" data-aos-once="true">
+                    <!-- Feature 5 -->
                     <div class="flex-shrink-0 mt-1">
                         <div class="w-8 h-8 rounded-full border-2 border-red-500 flex items-center justify-center group-hover:bg-red-500 transition-colors duration-300">
                             <svg class="w-4 h-4 text-red-500 group-hover:text-white transition-colors duration-300"
                                  fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                      d="M5 13l4 4L19 7"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
                             </svg>
                         </div>
                     </div>
@@ -230,14 +237,14 @@ get_header(); ?>
                     </p>
                 </div>
 
-                <!-- Feature 6 -->
-                <div class="flex items-start gap-4 group">
+                <div class="flex items-start gap-4 group"
+                     data-aos="fade-up" data-aos-delay="160" data-aos-duration="650" data-aos-once="true">
+                    <!-- Feature 6 -->
                     <div class="flex-shrink-0 mt-1">
                         <div class="w-8 h-8 rounded-full border-2 border-red-500 flex items-center justify-center group-hover:bg-red-500 transition-colors duration-300">
                             <svg class="w-4 h-4 text-red-500 group-hover:text-white transition-colors duration-300"
                                  fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                      d="M5 13l4 4L19 7"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
                             </svg>
                         </div>
                     </div>
@@ -247,20 +254,24 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-        <div class="text-left my-20">
+
+        <div class="text-left my-20"
+             data-aos="fade-down" data-aos-duration="700" data-aos-once="true">
             <div class="relative inline-block">
-                <span
-                        aria-hidden="true"
-                        class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-2
-                       w-14 h-14 rounded-full
-                       bg-gradient-to-br from-cyan-400 via-orange-400 to-rose-500 z-0">
-              </span>
-                <h2 class="relative z-10 text-white text-3xl md:text-4xl font-bold font-['Philosopher'] leading-tight">
+            <span
+                    aria-hidden="true"
+                    class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-2 w-14 h-14 rounded-full
+                       bg-gradient-to-br from-cyan-400 via-orange-400 to-rose-500 z-0"
+                    ></span>
+                <h2 class="relative z-10 text-white text-3xl md:text-4xl font-bold font-['Philosopher'] leading-tight"
+                    data-aos="fade-up" data-aos-delay="120" data-aos-duration="650" data-aos-once="true">
                     Example of Works
                 </h2>
             </div>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5"
+             data-aos="fade-up" data-aos-duration="700" data-aos-once="true">
             <?php
             $q = new WP_Query([
                     'post_type'      => 'portfolio',
@@ -294,12 +305,12 @@ get_header(); ?>
                         $gradient_class = $gradients[$i % count($gradients)];
                     }
                     ?>
-                    <div class="group relative overflow-hidden rounded-3xl aspect-[4/3] cursor-pointer transition-transform duration-500 hover:scale-105 hover:z-10">
+                    <div class="group relative overflow-hidden rounded-3xl aspect-[4/3] cursor-pointer transition-transform duration-500 hover:scale-105 hover:z-10"
+                         data-aos="zoom-in" data-aos-duration="650" data-aos-once="true">
                         <img src="<?php echo esc_url($img); ?>" alt="<?php the_title_attribute(); ?>" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t <?php echo esc_attr($gradient_class); ?> mix-blend-multiply"></div>
 
                         <?php if ($brand_text) : ?>
-                            <!-- Kiểu brand chữ lớn ở giữa (như CÉLINE) -->
                             <div class="absolute inset-0 flex items-center justify-center">
                                 <div class="text-white text-6xl font-bold tracking-widest" style="text-shadow: 2px 2px 20px rgba(0,0,0,0.5)">
                                     <?php echo esc_html($brand_text); ?>
@@ -312,7 +323,6 @@ get_header(); ?>
                                 </div>
                             </div>
                         <?php else : ?>
-                            <!-- Kiểu hover hiện tiêu đề + mô tả -->
                             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                                 <div class="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                                     <h3 class="text-2xl font-bold mb-2"><?php the_title(); ?></h3>
@@ -327,9 +337,9 @@ get_header(); ?>
                 wp_reset_postdata();
             endif;
             ?>
-
         </div>
     </div>
+
 
 
 <?php get_footer();
